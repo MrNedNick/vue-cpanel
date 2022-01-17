@@ -1,5 +1,5 @@
 <template>
-     <v-container>
+     <v-container class="container">
         Projects
      </v-container>
 </template>
@@ -11,3 +11,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.container {
+    margin-top: 50px;
+}
+</style>

@@ -1,8 +1,10 @@
 <template>
-  <v-container class="main" >
-    <vue-header />
-    <router-view></router-view>
-  </v-container>
+  <v-app>
+    <v-container class="main">
+      <vue-header />
+      <router-view />
+    </v-container>
+  </v-app>
 </template>
 
 <script>
@@ -22,13 +24,13 @@ export default {
 }
 
 body {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  color: #2c3e50;
-  font-size: 24px;
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 16px;
+max-width: 1440px;
+margin: 0 auto;
 }
-
 .main {
   background-color: #F5F6F7;
-  min-height: 700px;
+  min-height: 1500px;
 }
 </style>
