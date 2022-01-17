@@ -24,15 +24,12 @@
     </v-container>
     <v-container class="wrapper-right">
       <v-btn depressed color="white" height="72" c lass="question"
-        >?
-        <i class="far fa-question-circle"></i>
+        ><v-icon color="blue-grey darken-2">mdi-help-circle-outline</v-icon>
       </v-btn>
-
       <v-menu
-        v-model="menu"
         :close-on-content-click="false"
-        :nudge-width="200"
-        offset-x
+        :nudge-width="234"
+        max-width="234"
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -46,7 +43,6 @@
             <div class="cercle"></div>
           </v-btn>
         </template>
-
         <v-card>
           <v-list>
             <v-list-item>
@@ -56,20 +52,18 @@
                   alt="John"
                 />
               </v-list-item-avatar>
-
               <v-list-item-content>
-                <v-list-item-title>Davis Geidt</v-list-item-title>
-                <v-list-item-subtitle
+                <v-list-item-title class="font-weight-bold">Davis Geidt</v-list-item-title>
+                <v-list-item-subtitle class="grey--text text--lighten-1"
                   >davis.geidt@gmail.com</v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>
           </v-list>
-
           <v-divider></v-divider>
-          <v-list class="menu-list">
+          <v-list class="menu-list" subheader>
             <v-btn
-              class="menu-btn"
+              class="menu-btn ml-5 mt-5 mb-5 text-capitalize"
               color="primary"
               outlined
               width="186"
@@ -77,25 +71,22 @@
             >
               Upgrage Subscription
             </v-btn>
-          </v-list>
-
-          <v-divider></v-divider>
-          <v-list class="menu-list">
-            <v-list-item-title> 
-              SETTINGS 
-            </v-list-item-title>
-          </v-list>
-
-          <v-divider></v-divider>
-          <v-list class="menu-list"> 
-            <v-list-item-title>
-              CUSTOMIZE
-            </v-list-item-title> 
-          </v-list>
-
-          <v-divider></v-divider>
-          <v-list>
-            <v-btn color="red" text> Logout </v-btn>
+            <v-divider></v-divider>
+            <v-subheader class="grey--text"> SETTINGS </v-subheader>
+            <v-list-item-group color="primary" sub-group>
+              <v-list-item class="pl-8 grey--text text--darken-1"> Account Settings </v-list-item>
+              <v-list-item class="pl-8 grey--text text--darken-1">
+                <div class="pro">PRO</div>
+                Go Pro
+                <v-icon class="ml-15 grey--text">mdi-chevron-right</v-icon>
+              </v-list-item>
+              <v-divider></v-divider>
+              <v-subheader class="grey--text"> CUSTOMIZE </v-subheader>
+              <v-list-item class="pl-8 grey--text text--darken-1">Navigation</v-list-item>
+              <v-list-item class="pl-8 grey--text text--darken-1">Dashboard</v-list-item>
+              <v-divider></v-divider>
+              <v-list-item color="red" class="pl-8 mt-5 red--text">Logout</v-list-item>
+            </v-list-item-group>
           </v-list>
         </v-card>
       </v-menu>
@@ -156,19 +147,24 @@ export default {
   height: 35px;
   border-radius: 50%;
 }
-v-list {
-  margin: 0 24px;
-}
 .menu-btn {
   font-family: "Source Sans Pro", sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
-  width: 131px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  text-transform: capitalize;
+}
+.pro {
+  padding: 1px 4px;
+  width: 31px;
+  height: 17px;
+  border-radius: 2px;
+  margin-right: 8px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: white;
+  background-color: #3366ff;
 }
 </style>
