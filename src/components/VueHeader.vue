@@ -10,9 +10,11 @@
   >
     <v-container class="wrapper-left">
       <div class="header-logo">
-        <v-img alt="logo" src="../assets/logo.png" height="24" width="113" />
+        <router-link to="/">
+          <v-img alt="logo" src="../assets/logo.png" height="24" width="113" />
+        </router-link>
       </div>
-      <router-link to="/keywords" class="header-router" active-class="active">
+      <router-link to="/keywords" class="header-router">
         <span class="header-link">Keywords</span>
       </router-link>
       <router-link to="/projects" class="header-router">
@@ -74,16 +76,30 @@
             <v-divider></v-divider>
             <v-subheader class="grey--text"> SETTINGS </v-subheader>
             <v-list-item-group color="primary" sub-group>
-              <v-list-item class="pl-8 grey--text text--darken-1"> Account Settings </v-list-item>
-              <v-list-item class="pl-8 grey--text text--darken-1">
-                <div class="pro">PRO</div>
-                Go Pro
-                <v-icon class="ml-15 grey--text">mdi-chevron-right</v-icon>
-              </v-list-item>
+              <router-link to="/account" class="text-decoration-none">
+                <v-list-item class="pl-8 grey--text text--darken-1">
+                  Account Settings
+                </v-list-item>
+              </router-link>
+              <router-link to="/pro" class="text-decoration-none">
+                <v-list-item class="pl-8 grey--text text--darken-1">
+                  <div class="pro">PRO</div>
+                  Go Pro
+                  <v-icon class="ml-15 grey--text">mdi-chevron-right</v-icon>
+                </v-list-item>
+              </router-link>
               <v-divider></v-divider>
               <v-subheader class="grey--text"> CUSTOMIZE </v-subheader>
-              <v-list-item class="pl-8 grey--text text--darken-1">Navigation</v-list-item>
-              <v-list-item class="pl-8 grey--text text--darken-1">Dashboard</v-list-item>
+              <router-link to="/navigation" class="text-decoration-none">
+                <v-list-item class="pl-8 grey--text text--darken-1">
+                  Navigation
+                </v-list-item>
+              </router-link>
+              <router-link to="/dashboard" class="text-decoration-none">
+                <v-list-item class="pl-8 grey--text text--darken-1">
+                  Dashboard
+                </v-list-item>
+              </router-link>
               <v-divider></v-divider>
               <v-list-item color="red" class="pl-8 mt-5 red--text">Logout</v-list-item>
             </v-list-item-group>
@@ -130,8 +146,8 @@ export default {
   line-height: 27px;
   opacity: 0.6;
 }
-.router-link-active {
-  color: aqua;
+.header-router.router-link-active span  {
+  color: #3366ff;
 }
 .btn {
   height: 72px;
