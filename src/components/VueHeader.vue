@@ -11,7 +11,7 @@
     <v-container class="wrapper-left">
       <div class="header-logo">
         <router-link to="/">
-          <v-img alt="logo" src="../assets/logo.png" height="24" width="113" />
+          <v-img alt="logo" src="../assets/logo.png" height="24" width="113"/>
         </router-link>
       </div>
       <router-link to="/keywords" class="header-router">
@@ -25,8 +25,8 @@
       </router-link>
     </v-container>
     <v-container class="wrapper-right">
-      <v-btn depressed color="white" height="72" c lass="question"
-      ><v-icon color="blue-grey darken-2">mdi-help-circle-outline</v-icon>
+      <v-btn depressed color="white" height="72">
+        <v-icon color="blue-grey darken-2">mdi-help-circle-outline</v-icon>
       </v-btn>
       <v-menu
           :close-on-content-click="false"
@@ -57,7 +57,8 @@
               <v-list-item-content>
                 <v-list-item-title class="font-weight-bold">Davis Geidt</v-list-item-title>
                 <v-list-item-subtitle class="grey--text text--lighten-1"
-                >davis.geidt@gmail.com</v-list-item-subtitle
+                >davis.geidt@gmail.com
+                </v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>
@@ -74,7 +75,7 @@
               Upgrage Subscription
             </v-btn>
             <v-divider></v-divider>
-            <v-subheader class="grey--text"> SETTINGS </v-subheader>
+            <v-subheader class="grey--text"> SETTINGS</v-subheader>
             <v-list-item-group color="primary" sub-group>
               <router-link to="/account" class="text-decoration-none">
                 <v-list-item class="pl-8 grey--text text--darken-1">
@@ -89,7 +90,7 @@
                 </v-list-item>
               </router-link>
               <v-divider></v-divider>
-              <v-subheader class="grey--text"> CUSTOMIZE </v-subheader>
+              <v-subheader class="grey--text"> CUSTOMIZE</v-subheader>
               <router-link to="/navigation" class="text-decoration-none">
                 <v-list-item class="pl-8 grey--text text--darken-1">
                   Navigation
@@ -121,23 +122,29 @@ export default {
 * {
   box-sizing: border-box;
 }
+
 .wrapper {
   margin: 0 auto;
 }
+
 .wrapper-left {
   display: flex;
   justify-content: flex-start;
 }
+
 .wrapper-right {
   display: flex;
   justify-content: flex-end;
 }
+
 .header-logo {
   margin-right: 64px;
 }
+
 .header-router {
   text-decoration: none;
 }
+
 .header-link {
   color: #05122d;
   margin-right: 40px;
@@ -146,22 +153,23 @@ export default {
   line-height: 27px;
   opacity: 0.6;
 }
-.header-router.router-link-active span  {
+
+.header-router.router-link-active span {
   color: #3366ff;
 }
+
 .btn {
   height: 72px;
   width: 56px;
 }
-.question {
-  color: #05122d;
-}
+
 .cercle {
   background-color: black;
   width: 35px;
   height: 35px;
   border-radius: 50%;
 }
+
 .menu-btn {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
@@ -169,6 +177,7 @@ export default {
   line-height: 18px;
   text-transform: capitalize;
 }
+
 .pro {
   padding: 1px 4px;
   width: 31px;
