@@ -3,9 +3,11 @@
     <v-container class="wrapper mt-15">
       <v-container class="d-flex align-center flex-column">
         <h1 class="page-title">Get discovered online.</h1>
-        <span class="page-subtitle">We support beginners at every step of their SEO journey.</span>
+        <span class="page-subtitle"
+          >We support beginners at every step of their SEO journey.</span
+        >
 
-        <v-switch inset label="Switch" />
+        <v-switch class="mt-16 mb-6" inset label="Switch" />
       </v-container>
       <v-container class="card-wrapper d-flex justify-center">
         <v-card class="card-left mx-auto mr-0" elevation="0">
@@ -38,178 +40,214 @@
           </v-card-text>
         </v-card>
 
-        <v-card class="card mx-auto pl-3 pt-4 rounded-xl" elevation="1">
-          <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
-            <span class="title">Starter</span>
-            <div class="d-flex align-center">
-              <span class="price">$29</span>
-              <span class="price-period ml-2">/Month</span>
-            </div>
-          </v-card-title>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">1</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">1</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
-            <v-icon class="card-circle mr-1"
-              >mdi-checkbox-blank-circle-outline</v-icon
-            >
-            <v-icon class="card-circle"
-              >mdi-checkbox-blank-circle-outline</v-icon
-            >
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">2</span>
-            <span class="card-subtitle">websites per project</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">500</span>
-            <span class="card-subtitle">(weekly)</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">5k</span>
-            <span class="card-subtitle">per project</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">1</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <v-icon class="card-check">mdi-check</v-icon>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-8">
-            <v-icon class="card-check">mdi-check</v-icon>
-          </v-card-text>
-          <v-btn
-            class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-            color="primary"
-            outlined
+        <v-hover v-slot:default="{ hover }">
+          <v-card
+            elevation="1"
+            :class="
+              hover
+                ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
+                : 'card mx-auto pl-3 pt-4 rounded-xl'
+            "
           >
-            Pick Plan
-          </v-btn>
-          <v-divider></v-divider>
-          <v-card-text class="card-footer mt-5 ml-2">
-            <span class="card-footer-text">
-              Best for <b>small</b> and <b>micro businesses</b> with none to
-              little SEO knowledge or web professionals serving them.
-            </span>
-          </v-card-text>
-        </v-card>
+            <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
+              <span class="title">Starter</span>
+              <div class="d-flex align-center">
+                <span class="price">$29</span>
+                <span class="price-period ml-2">/Month</span>
+              </div>
+            </v-card-title>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">1</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">1</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <v-icon class="card-circle mr-1"
+                >mdi-checkbox-blank-circle</v-icon
+              >
+              <v-icon class="card-circle mr-1"
+                >mdi-checkbox-blank-circle-outline</v-icon
+              >
+              <v-icon class="card-circle"
+                >mdi-checkbox-blank-circle-outline</v-icon
+              >
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">2</span>
+              <span class="card-subtitle">websites per project</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">500</span>
+              <span class="card-subtitle">(weekly)</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">5k</span>
+              <span class="card-subtitle">per project</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">1</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <v-icon class="card-check">mdi-check</v-icon>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-8">
+              <v-icon class="card-check">mdi-check</v-icon>
+            </v-card-text>
+            <v-btn
+              class="card-btn ml-5 mt-5 mb-10 text-capitalize"
+              color="primary"
+              outlined
+            >
+              Pick Plan
+            </v-btn>
+            <v-divider></v-divider>
+            <v-card-text class="card-footer mt-5 ml-2">
+              <span class="card-footer-text">
+                Best for <b>small</b> and <b>micro businesses</b> with none to
+                little SEO knowledge or web professionals serving them.
+              </span>
+            </v-card-text>
+          </v-card>
+        </v-hover>
+        <v-hover v-slot:default="{ hover }">
+          <v-card
+            elevation="1"
+            :class="
+              hover
+                ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
+                : 'card mx-auto pl-3 pt-4 rounded-xl'
+            "
+          >
+            <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
+              <span class="title">Pro</span>
+              <div class="d-flex align-center">
+                <span class="price">$99</span>
+                <span class="price-period ml-2">/Month</span>
+              </div>
+            </v-card-title>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">5</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">1</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <v-icon class="card-circle mr-1"
+                >mdi-checkbox-blank-circle</v-icon
+              >
+              <v-icon class="card-circle mr-1"
+                >mdi-checkbox-blank-circle</v-icon
+              >
+              <v-icon class="card-circle"
+                >mdi-checkbox-blank-circle-outline</v-icon
+              >
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">3</span>
+              <span class="card-subtitle">websites per project</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">2,500</span>
+              <span class="card-subtitle">(weekly)</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">10</span>
+              <span class="card-subtitle">per project</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">10</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <v-icon class="card-check">mdi-check</v-icon>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-8">
+              <v-icon class="card-check">mdi-check</v-icon>
+            </v-card-text>
+            <v-btn
+              class="card-btn ml-5 mt-5 mb-10 text-capitalize"
+              color="primary"
+              outlined
+            >
+              Pick Plan
+            </v-btn>
+            <v-divider></v-divider>
+            <v-card-text class="card-footer mt-5 ml-2">
+              <span class="card-footer-text">
+                <b>Web professionals, medium businesses</b> and In-house SEO
+                managers with little to advanced SEO knowledge.
+              </span>
+            </v-card-text>
+          </v-card>
+        </v-hover>
 
-        <v-card class="card mx-auto pl-3 pt-4 rounded-xl" elevation="1">
-          <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
-            <span class="title">Pro</span>
-            <div class="d-flex align-center">
-              <span class="price">$99</span>
-              <span class="price-period ml-2">/Month</span>
-            </div>
-          </v-card-title>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">5</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">1</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
-            <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
-            <v-icon class="card-circle"
-              >mdi-checkbox-blank-circle-outline</v-icon
+        <v-hover v-slot:default="{ hover }">
+          <v-card
+            elevation="1"
+            :class="
+              hover
+                ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
+                : 'card mx-auto pl-3 pt-4 rounded-xl'
+            "
+          >
+            <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
+              <span class="title">Agency</span>
+              <div class="d-flex align-center">
+                <span class="price">$219</span>
+                <span class="price-period ml-2">/Month</span>
+              </div>
+            </v-card-title>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">30</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">5</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <v-icon class="card-circle mr-1"
+                >mdi-checkbox-blank-circle</v-icon
+              >
+              <v-icon class="card-circle mr-1"
+                >mdi-checkbox-blank-circle</v-icon
+              >
+              <v-icon class="card-circle">mdi-checkbox-blank-circle</v-icon>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">6</span>
+              <span class="card-subtitle">websites per project</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">5,000</span>
+              <span class="card-subtitle">(weekly)</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text mr-1">50</span>
+              <span class="card-subtitle">per project</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <span class="card-text">Unlimited</span>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-1">
+              <v-icon class="card-check">mdi-check</v-icon>
+            </v-card-text>
+            <v-card-text class="card-row ml-7 mb-8">
+              <v-icon class="card-check">mdi-check</v-icon>
+            </v-card-text>
+            <v-btn
+              class="card-btn ml-5 mt-5 mb-10 text-capitalize"
+              color="primary"
+              outlined
             >
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">3</span>
-            <span class="card-subtitle">websites per project</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">2,500</span>
-            <span class="card-subtitle">(weekly)</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">10</span>
-            <span class="card-subtitle">per project</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">10</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <v-icon class="card-check">mdi-check</v-icon>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-8">
-            <v-icon class="card-check">mdi-check</v-icon>
-          </v-card-text>
-          <v-btn
-            class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-            color="primary"
-            outlined
-          >
-            Pick Plan
-          </v-btn>
-          <v-divider></v-divider>
-          <v-card-text class="card-footer mt-5 ml-2">
-            <span class="card-footer-text">
-              <b>Web professionals, medium businesses</b> and In-house SEO
-              managers with little to advanced SEO knowledge.
-            </span>
-          </v-card-text>
-        </v-card>
-
-        <v-card class="card mx-auto pl-3 pt-4 rounded-xl" elevation="1">
-          <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
-            <span class="title">Agency</span>
-            <div class="d-flex align-center">
-              <span class="price">$219</span>
-              <span class="price-period ml-2">/Month</span>
-            </div>
-          </v-card-title>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">30</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">5</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
-            <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
-            <v-icon class="card-circle">mdi-checkbox-blank-circle</v-icon>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">6</span>
-            <span class="card-subtitle">websites per project</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">5,000</span>
-            <span class="card-subtitle">(weekly)</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text mr-1">50</span>
-            <span class="card-subtitle">per project</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <span class="card-text">Unlimited</span>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
-            <v-icon class="card-check">mdi-check</v-icon>
-          </v-card-text>
-          <v-card-text class="card-row ml-7 mb-8">
-            <v-icon class="card-check">mdi-check</v-icon>
-          </v-card-text>
-          <v-btn
-            class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-            color="primary"
-            outlined
-          >
-            Pick Plan
-          </v-btn>
-          <v-divider></v-divider>
-          <v-card-text class="card-footer mt-5 ml-2">
-            <span class="card-footer-text">
-              Best option for small and medium agencies offering SEO.
-            </span>
-          </v-card-text>
-        </v-card>
+              Pick Plan
+            </v-btn>
+            <v-divider></v-divider>
+            <v-card-text class="card-footer mt-5 ml-2">
+              <span class="card-footer-text">
+                Best option for small and medium agencies offering SEO.
+              </span>
+            </v-card-text>
+          </v-card>
+        </v-hover>
       </v-container>
 
       <v-container class="bottom-blocks mt-16">
@@ -327,17 +365,17 @@ export default {
   font-weight: 600;
   font-size: 50px;
   line-height: 63px;
-  color: #05122D;
+  color: #05122d;
 }
-.page-subtitle{
+.page-subtitle {
   font-family: Source Sans Pro;
   font-size: 16px;
   line-height: 166%;
-  color: #05122D;
+  color: #05122d;
   opacity: 0.4;
 }
 .card-wrapper {
-  width: 1240px
+  width: 1240px;
 }
 /* card left */
 .card-left {
@@ -358,6 +396,12 @@ export default {
 .card {
   width: 303px;
   height: 974px;
+  border: 2px solid white;
+}
+.hover-card {
+  width: 303px;
+  height: 974px;
+  border: 2px solid blue;
 }
 .title {
   font-size: 22px;
