@@ -8,6 +8,36 @@
         <v-switch inset label="Switch" />
       </v-container>
       <v-container class="card-wrapper d-flex">
+        <v-card class="card-left mx-auto mr-0" elevation="0">
+          <v-card-text class="card-row ml-7 mb-1">
+            <span class="card-left-text">Projects</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7 mb-2">
+            <span class="card-left-text">Users</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7 mb-1">
+            <span class="card-left-text">Reporting</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7 mb-2">
+            <span class="card-left-text">Competitor Benchmarking</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7 mb-2">
+            <span class="card-left-text">Keyword Monitoring</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7 mb-2">
+            <span class="card-left-text">Site Audit Pages to Crawl</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7 mb-2">
+            <span class="card-left-text">Search Engines</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7 mb-2">
+            <span class="card-left-text">SEO Tutorials</span>
+          </v-card-text>
+          <v-card-text class="card-row ml-7">
+            <span class="card-left-text">Customer Support</span>
+          </v-card-text>
+        </v-card>
+
         <v-card class="card mx-auto pl-3 pt-4 rounded-xl" elevation="1">
           <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
             <span class="title">Starter</span>
@@ -182,7 +212,7 @@
         </v-card>
       </v-container>
 
-      <v-container class="bottom-blocks">
+      <v-container class="bottom-blocks mt-16">
         <v-container class="block d-flex justify-space-around align-center">
           <v-card class="checkbox-card" elevation="0">
             <v-card-title class="checkbox-card-title">Keywords</v-card-title>
@@ -191,11 +221,11 @@
               label="Analyze the terms that are important to you & your competition."
               v-model="checkbox"
             />
-            <v-checkbox 
+            <v-checkbox
               class="checkbox pt-0 mt-0 ml-4"
-              label="Identify opportunity keywords." 
+              label="Identify opportunity keywords."
               v-model="checkbox"
-             />
+            />
             <v-btn
               class="card-btn ml-4 mt-5 text-capitalize"
               color="primary"
@@ -223,16 +253,16 @@
               label="Optimize technical implementation."
               v-model="checkbox"
             />
-            <v-checkbox 
+            <v-checkbox
               class="checkbox pt-0 mt-0 ml-4"
-              label="Avoid technical errors." 
+              label="Avoid technical errors."
               v-model="checkbox"
-             />
-             <v-checkbox 
+            />
+            <v-checkbox
               class="checkbox pt-0 mt-0 ml-4"
-              label="WDF*IDF analysis" 
+              label="WDF*IDF analysis"
               v-model="checkbox"
-             />
+            />
             <v-btn
               class="card-btn ml-4 mt-5 text-capitalize"
               color="primary"
@@ -244,17 +274,19 @@
         </v-container>
         <v-container class="block d-flex justify-space-around">
           <v-card class="checkbox-card" elevation="0">
-            <v-card-title class="checkbox-card-title">Rank Tracking</v-card-title>
+            <v-card-title class="checkbox-card-title"
+              >Rank Tracking</v-card-title
+            >
             <v-checkbox
               class="checkbox ml-4"
               label="Monitor your most important keywords."
               v-model="checkbox"
             />
-            <v-checkbox 
+            <v-checkbox
               class="checkbox pt-0 mt-0 ml-4"
-              label="See the ranking development of you projects" 
+              label="See the ranking development of you projects"
               v-model="checkbox"
-             />
+            />
             <v-btn
               class="card-btn ml-4 mt-5 text-capitalize"
               color="primary"
@@ -279,7 +311,7 @@ export default {
   data() {
     return {
       checkbox: true,
-    }
+    };
   },
 };
 </script>
@@ -289,6 +321,21 @@ export default {
   font-family: Source Sans Pro;
   color: #05122d;
   margin-top: 0px;
+}
+/* card left */
+.card-left {
+  padding-top: 170px;
+  width: 200px;
+  background-color: #f5f6f7;
+}
+.card-left-text {
+  font-family: Source Sans Pro;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #05122d;
+  opacity: 0.4;
 }
 /* card */
 .card {
@@ -347,7 +394,7 @@ export default {
   max-width: 1000px;
 }
 .checkbox-card {
-  background-color: #F5F6F7;;
+  background-color: #f5f6f7;
 }
 .checkbox-card-title {
   font-family: Source Sans Pro;
