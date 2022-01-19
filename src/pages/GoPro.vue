@@ -1,39 +1,39 @@
 <template>
   <v-main>
-    <v-container class="wrapper">
+    <v-container class="wrapper mt-15">
       <v-container class="d-flex align-center flex-column">
-        <h1>Get discovered online.</h1>
-        <span>We support beginners at every step of their SEO journey.</span>
+        <h1 class="page-title">Get discovered online.</h1>
+        <span class="page-subtitle">We support beginners at every step of their SEO journey.</span>
 
         <v-switch inset label="Switch" />
       </v-container>
-      <v-container class="card-wrapper d-flex">
+      <v-container class="card-wrapper d-flex justify-center">
         <v-card class="card-left mx-auto mr-0" elevation="0">
-          <v-card-text class="card-row ml-7 mb-1">
+          <v-card-text class="card-row mb-1">
             <span class="card-left-text">Projects</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7 mb-2">
+          <v-card-text class="card-row mb-2">
             <span class="card-left-text">Users</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7 mb-1">
+          <v-card-text class="card-row mb-1">
             <span class="card-left-text">Reporting</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7 mb-2">
+          <v-card-text class="card-row mb-2">
             <span class="card-left-text">Competitor Benchmarking</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7 mb-2">
+          <v-card-text class="card-row mb-2">
             <span class="card-left-text">Keyword Monitoring</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7 mb-2">
+          <v-card-text class="card-row mb-2">
             <span class="card-left-text">Site Audit Pages to Crawl</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7 mb-2">
+          <v-card-text class="card-row mb-2">
             <span class="card-left-text">Search Engines</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7 mb-2">
+          <v-card-text class="card-row mb-2">
             <span class="card-left-text">SEO Tutorials</span>
           </v-card-text>
-          <v-card-text class="card-row ml-7">
+          <v-card-text class="card-row">
             <span class="card-left-text">Customer Support</span>
           </v-card-text>
         </v-card>
@@ -321,6 +321,23 @@ export default {
   font-family: Source Sans Pro;
   color: #05122d;
   margin-top: 0px;
+}
+.page-title {
+  font-family: Source Sans Pro;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 63px;
+  color: #05122D;
+}
+.page-subtitle{
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  line-height: 166%;
+  color: #05122D;
+  opacity: 0.4;
+}
+.card-wrapper {
+  width: 1240px
 }
 /* card left */
 .card-left {
