@@ -8,11 +8,7 @@
         <v-switch inset label="Switch" />
       </v-container>
       <v-container class="card-wrapper d-flex">
-
-        <v-card
-          class="card mx-auto pl-3 pt-4 rounded-xl"
-          elevation="1"
-        >
+        <v-card class="card mx-auto pl-3 pt-4 rounded-xl" elevation="1">
           <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
             <span class="title">Starter</span>
             <div class="d-flex align-center">
@@ -72,10 +68,7 @@
           </v-card-text>
         </v-card>
 
-        <v-card
-          class="card mx-auto pl-3 pt-4 rounded-xl"
-          elevation="1"
-        >
+        <v-card class="card mx-auto pl-3 pt-4 rounded-xl" elevation="1">
           <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
             <span class="title">Pro</span>
             <div class="d-flex align-center">
@@ -127,16 +120,13 @@
           <v-divider></v-divider>
           <v-card-text class="card-footer mt-5 ml-2">
             <span class="card-footer-text">
-              <b>Web professionals, medium businesses</b> and In-house SEO managers
-              with little to advanced SEO knowledge.
+              <b>Web professionals, medium businesses</b> and In-house SEO
+              managers with little to advanced SEO knowledge.
             </span>
           </v-card-text>
         </v-card>
 
-        <v-card
-          class="card mx-auto pl-3 pt-4 rounded-xl"
-          elevation="1"
-        >
+        <v-card class="card mx-auto pl-3 pt-4 rounded-xl" elevation="1">
           <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
             <span class="title">Agency</span>
             <div class="d-flex align-center">
@@ -152,12 +142,8 @@
           </v-card-text>
           <v-card-text class="card-row ml-7 mb-1">
             <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
-            <v-icon class="card-circle mr-1"
-              >mdi-checkbox-blank-circle</v-icon
-            >
-            <v-icon class="card-circle"
-              >mdi-checkbox-blank-circle</v-icon
-            >
+            <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
+            <v-icon class="card-circle">mdi-checkbox-blank-circle</v-icon>
           </v-card-text>
           <v-card-text class="card-row ml-7 mb-1">
             <span class="card-text mr-1">6</span>
@@ -195,13 +181,106 @@
           </v-card-text>
         </v-card>
       </v-container>
+
+      <v-container class="bottom-blocks">
+        <v-container class="block d-flex justify-space-around align-center">
+          <v-card class="checkbox-card" elevation="0">
+            <v-card-title class="checkbox-card-title">Keywords</v-card-title>
+            <v-checkbox
+              class="checkbox ml-4"
+              label="Analyze the terms that are important to you & your competition."
+              v-model="checkbox"
+            />
+            <v-checkbox 
+              class="checkbox pt-0 mt-0 ml-4"
+              label="Identify opportunity keywords." 
+              v-model="checkbox"
+             />
+            <v-btn
+              class="card-btn ml-4 mt-5 text-capitalize"
+              color="primary"
+              outlined
+            >
+              Pick Plan
+            </v-btn>
+          </v-card>
+          <v-img
+            src="../assets/keywords.png"
+            max-height="360"
+            max-width="360"
+          />
+        </v-container>
+        <v-container class="block d-flex justify-space-around">
+          <v-img
+            src="../assets/siteAudit.png"
+            max-height="360"
+            max-width="360"
+          />
+          <v-card class="checkbox-card" elevation="0">
+            <v-card-title class="checkbox-card-title">Site Audit</v-card-title>
+            <v-checkbox
+              class="checkbox ml-4"
+              label="Optimize technical implementation."
+              v-model="checkbox"
+            />
+            <v-checkbox 
+              class="checkbox pt-0 mt-0 ml-4"
+              label="Avoid technical errors." 
+              v-model="checkbox"
+             />
+             <v-checkbox 
+              class="checkbox pt-0 mt-0 ml-4"
+              label="WDF*IDF analysis" 
+              v-model="checkbox"
+             />
+            <v-btn
+              class="card-btn ml-4 mt-5 text-capitalize"
+              color="primary"
+              outlined
+            >
+              Pick Plan
+            </v-btn>
+          </v-card>
+        </v-container>
+        <v-container class="block d-flex justify-space-around">
+          <v-card class="checkbox-card" elevation="0">
+            <v-card-title class="checkbox-card-title">Rank Tracking</v-card-title>
+            <v-checkbox
+              class="checkbox ml-4"
+              label="Monitor your most important keywords."
+              v-model="checkbox"
+            />
+            <v-checkbox 
+              class="checkbox pt-0 mt-0 ml-4"
+              label="See the ranking development of you projects" 
+              v-model="checkbox"
+             />
+            <v-btn
+              class="card-btn ml-4 mt-5 text-capitalize"
+              color="primary"
+              outlined
+            >
+              Pick Plan
+            </v-btn>
+          </v-card>
+          <v-img
+            src="../assets/rankTracker.png"
+            max-height="360"
+            max-width="360"
+          />
+        </v-container>
+      </v-container>
     </v-container>
   </v-main>
 </template>
 
 <script>
 export default {
-  setup() {},
+  data() {
+    return {
+      checkbox: true,
+    }
+  },
 };
 </script>
 
@@ -262,5 +341,19 @@ export default {
   line-height: 166%;
   color: #05122d;
   opacity: 0.6;
+}
+/* bottom */
+.bottom-blocks {
+  max-width: 1000px;
+}
+.checkbox-card {
+  background-color: #F5F6F7;;
+}
+.checkbox-card-title {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 35px;
 }
 </style>
