@@ -40,8 +40,23 @@
           </v-card-text>
         </v-card>
 
-        <price-card></price-card>
-        <v-hover v-slot:default="{ hover }">
+        <price-card 
+        v-for="card in cards" 
+        :key="card.id"
+        :price="card.price"
+        :projects="card.projects"
+        :users="card.users"
+        :reporting="card.reporting"
+        :competitor="card.competitor"
+        :keyword="card.keyword"
+        :site="card.site"
+        :search="card.search"
+        :seo="card.seo"
+        :customer="card.customer"
+        :footerText="card.footerText"
+        />
+
+        <!-- <v-hover v-slot:default="{ hover }">
           <v-card
             elevation="1"
             :class="
@@ -248,7 +263,7 @@
               </span>
             </v-card-text>
           </v-card>
-        </v-hover>
+        </v-hover> -->
       </v-container>
 
       <v-container class="bottom-blocks mt-16">
@@ -346,8 +361,7 @@
 </template>
 
 <script>
-
-import PriceCard from "../components/PriceCard.vue"
+import PriceCard from "../components/PriceCard.vue";
 
 export default {
   components: {
@@ -356,6 +370,51 @@ export default {
   data() {
     return {
       checkbox: true,
+      cards: [
+        {
+          id: 1,
+          price: "$29",
+          projects: '1',
+          users: '1',
+          reporting: "",
+          competitor: '2',
+          keyword: '500',
+          site: "5k",
+          search: '1',
+          seo: "",
+          customer: "",
+          footerText:
+            "Best for small and micro businesses with none to little SEO knowledge or web professionals serving them.",
+        },
+        {
+          id: 2,
+          price: '$30',
+          projects: 1,
+          users: 1,
+          reporting: 1,
+          competitor: 1,
+          keyword: 1,
+          site: 1,
+          search: 1,
+          seo: 1,
+          customer: 1,
+          footerText: 1,
+        },
+        {
+          id: 3,
+          price: '$31',
+          projects: 1,
+          users: 1,
+          reporting: 1,
+          competitor: 1,
+          keyword: 1,
+          site: 1,
+          search: 1,
+          seo: 1,
+          customer: 1,
+          footerText: 1,
+        },
+      ],
     };
   },
 };
@@ -382,7 +441,7 @@ export default {
   opacity: 0.4;
 }
 /* switch */
- 
+
 /* .v-application .primary--text {
     color: white !important;
     caret-color: white !important;
@@ -406,6 +465,7 @@ export default {
   opacity: 0.4;
 }
 /* card */
+/*
 .card {
   width: 303px;
   height: 974px;
@@ -462,7 +522,7 @@ export default {
   line-height: 166%;
   color: #05122d;
   opacity: 0.6;
-}
+} */
 /* bottom */
 .bottom-blocks {
   max-width: 1000px;

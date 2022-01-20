@@ -1,17 +1,17 @@
 <template>
   <v-app-bar
-      color="white"
-      app
-      height="72"
-      max-width="1440"
-      flat
-      class="wrapper"
-      elevation="2"
+    color="white"
+    app
+    height="72"
+    max-width="1440"
+    flat
+    class="wrapper"
+    elevation="2"
   >
     <v-container class="wrapper-left">
       <div class="header-logo">
         <router-link to="/">
-          <v-img alt="logo" src="../assets/logo.png" height="24" width="113"/>
+          <v-img alt="logo" src="../assets/logo.png" height="24" width="113" />
         </router-link>
       </div>
       <router-link to="/keywords" class="header-router">
@@ -29,18 +29,18 @@
         <v-icon color="blue-grey darken-2">mdi-help-circle-outline</v-icon>
       </v-btn>
       <v-menu
-          :close-on-content-click="false"
-          :nudge-width="234"
-          max-width="234"
+        :close-on-content-click="false"
+        :nudge-width="234"
+        max-width="234"
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn
-              depressed
-              color="white"
-              height="72"
-              class="btn"
-              v-bind="attrs"
-              v-on="on"
+            depressed
+            color="white"
+            height="72"
+            class="btn"
+            v-bind="attrs"
+            v-on="on"
           >
             <div class="cercle"></div>
           </v-btn>
@@ -50,27 +50,28 @@
             <v-list-item>
               <v-list-item-avatar>
                 <img
-                    src="https://cdn.vuetifyjs.com/images/john.jpg"
-                    alt="John"
+                  src="https://cdn.vuetifyjs.com/images/john.jpg"
+                  alt="John"
                 />
               </v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title class="font-weight-bold">Davis Geidt</v-list-item-title>
-                <v-list-item-subtitle class="grey--text text--lighten-1"
-                >davis.geidt@gmail.com
-                </v-list-item-subtitle
+                <v-list-item-title class="font-weight-bold"
+                  >Davis Geidt</v-list-item-title
                 >
+                <v-list-item-subtitle class="grey--text text--lighten-1"
+                  >davis.geidt@gmail.com
+                </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-list>
           <v-divider></v-divider>
           <v-list class="menu-list" subheader>
             <v-btn
-                class="menu-btn ml-5 mt-5 mb-5 text-capitalize"
-                color="primary"
-                outlined
-                width="186"
-                height="40"
+              class="menu-btn ml-5 mt-5 mb-5 text-capitalize"
+              color="primary"
+              outlined
+              width="186"
+              height="40"
             >
               Upgrage Subscription
             </v-btn>
@@ -102,7 +103,9 @@
                 </v-list-item>
               </router-link>
               <v-divider></v-divider>
-              <v-list-item color="red" class="pl-8 mt-5 red--text">Logout</v-list-item>
+              <v-list-item color="red" class="pl-8 mt-5 red--text"
+                >Logout</v-list-item
+              >
             </v-list-item-group>
           </v-list>
         </v-card>
@@ -114,7 +117,6 @@
 <script>
 export default {
   name: "VueHeader",
-  data: () => ({}),
 };
 </script>
 
