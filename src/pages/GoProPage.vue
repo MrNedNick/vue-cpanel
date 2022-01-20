@@ -269,65 +269,6 @@ export default {
   color: #05122d;
   opacity: 0.4;
 }
-/* card */
-/*
-.card {
-  width: 303px;
-  height: 974px;
-  border: 2px solid white;
-}
-.hover-card {
-  width: 303px;
-  height: 974px;
-  border: 2px solid blue;
-}
-.title {
-  font-size: 22px;
-  line-height: 28px;
-}
-.price {
-  font-weight: bold;
-  font-size: 56px;
-  line-height: 70px;
-}
-.price-period {
-  font-size: 16px;
-  line-height: 166%;
-  color: #05122d;
-  opacity: 0.4;
-}
-.card-text {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 166%;
-}
-.card-subtitle {
-  font-size: 16px;
-  line-height: 166%;
-  color: #05122d;
-  opacity: 0.4;
-}
-.card-btn {
-  width: 239px;
-  height: 40px;
-}
-.card-circle.v-icon.v-icon {
-  font-size: 10px;
-  color: #3366ff;
-}
-.card-check.v-icon.v-icon {
-  font-size: 18px;
-  color: #3366ff;
-}
-.card-footer {
-  max-width: 274px;
-}
-.card-footer-text {
-  font-size: 14px;
-  line-height: 166%;
-  color: #05122d;
-  opacity: 0.6;
-} */
 /* bottom */
 .bottom-blocks {
   max-width: 1000px;

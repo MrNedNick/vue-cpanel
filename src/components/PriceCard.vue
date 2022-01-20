@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card
-      elevation="1"
+      :elevation="cardElevation"
       :class="
         cardBlueBorder
           ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
@@ -23,9 +23,7 @@
       </v-card-text>
       <v-card-text class="card-row ml-7 mb-1">
         <v-icon class="card-circle mr-1">{{ circle1 }}</v-icon>
-        <v-icon class="card-circle mr-1"
-          >{{ circle2 }}</v-icon
-        >
+        <v-icon class="card-circle mr-1">{{ circle2 }}</v-icon>
         <v-icon class="card-circle">{{ circle3 }}</v-icon>
       </v-card-text>
       <v-card-text class="card-row ml-7 mb-1">
@@ -53,8 +51,8 @@
         class="card-btn ml-5 mt-5 mb-10 text-capitalize"
         color="primary"
         outlined
-        @mouseover="cardBlueBorder = true"
-        @mouseleave="cardBlueBorder = false"
+        @mouseover="mouseOver"
+        @mouseleave="mouseLeave"
       >
         Pick Plan
       </v-btn>
@@ -92,7 +90,18 @@ export default {
   data: function () {
     return {
       cardBlueBorder: false,
+      cardElevation: "",
     };
+  },
+  methods: {
+    mouseOver: function () {
+      this.cardBlueBorder = true;
+      this.cardElevation = 5;
+    },
+    mouseLeave: function () {
+      this.cardBlueBorder = false;
+      this.cardElevation = 1;
+    },
   },
 };
 </script>
