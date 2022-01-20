@@ -4,10 +4,10 @@ import MainPage from "@/pages/MainPage";
 import KeywordsPage from "@/pages/KeywordsPage"
 import ProjectsPage from "@/pages/ProjectsPage"
 import AdvisorPage from "@/pages/AdvisorPage"
-import AccountSettings from "@/pages/AccountSettings";
-import GoPro from "@/pages/GoPro";
-import Navigation from "@/pages/Navigation";
-import Dashboard from "@/pages/Dashboard";
+import AccountSettingsPage from "@/pages/AccountSettingsPage";
+import GoProPage from "@/pages/GoProPage";
+import NavigationPage from "@/pages/NavigationPage";
+import DashboardPage from "@/pages/DashboardPage";
 
 Vue.use(VueRouter)
 
@@ -30,19 +30,19 @@ const routes = [
     },
     {
         path: '/account',
-        component: AccountSettings,
+        component: AccountSettingsPage,
     },
     {
         path: '/pro',
-        component: GoPro,
+        component: GoProPage,
     },
     {
         path: '/navigation',
-        component: Navigation,
+        component: NavigationPage,
     },
     {
         path: '/dashboard',
-        component: Dashboard,
+        component: DashboardPage,
     },
 ]
 

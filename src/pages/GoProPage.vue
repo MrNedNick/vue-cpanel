@@ -1,13 +1,13 @@
 <template>
   <v-main>
     <v-container class="wrapper mt-15">
-      <v-container class="d-flex align-center flex-column">
+      <v-container class="top-wrapper d-flex align-center flex-column">
         <h1 class="page-title">Get discovered online.</h1>
         <span class="page-subtitle"
           >We support beginners at every step of their SEO journey.</span
         >
 
-        <v-switch class="mt-16 mb-6" inset label="Switch" />
+        <v-switch class="mt-16 mb-6 switcher" inset label="Switch" />
       </v-container>
       <v-container class="card-wrapper d-flex justify-center">
         <v-card class="card-left mx-auto mr-0" elevation="0">
@@ -40,6 +40,7 @@
           </v-card-text>
         </v-card>
 
+        <price-card></price-card>
         <v-hover v-slot:default="{ hover }">
           <v-card
             elevation="1"
@@ -345,7 +346,13 @@
 </template>
 
 <script>
+
+import PriceCard from "../components/PriceCard.vue"
+
 export default {
+  components: {
+    PriceCard,
+  },
   data() {
     return {
       checkbox: true,
@@ -374,6 +381,12 @@ export default {
   color: #05122d;
   opacity: 0.4;
 }
+/* switch */
+ 
+/* .v-application .primary--text {
+    color: white !important;
+    caret-color: white !important;
+ } */
 .card-wrapper {
   width: 1240px;
 }
