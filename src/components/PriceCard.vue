@@ -47,15 +47,10 @@
       <v-card-text class="card-row ml-7 mb-8">
         <v-icon class="card-check">mdi-check</v-icon>
       </v-card-text>
-      <v-btn
-        class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-        color="primary"
-        outlined
-        @mouseover="mouseOver"
-        @mouseleave="mouseLeave"
-      >
-        Pick Plan
-      </v-btn>
+      <pick-plan-button         
+        @mouseOver="mouseOver"
+        @mouseLeave="mouseLeave"
+        />
       <v-divider></v-divider>
       <v-card-text class="card-footer mt-5 ml-2">
         <span class="card-footer-text">
@@ -67,8 +62,13 @@
 </template>
 
 <script>
+import PickPlanButton from "./PickPlanButton.vue"
+
 export default {
   name: "PriceCard",
+  components: {
+      PickPlanButton,
+  },
   props: [
     "card",
     "id",
@@ -143,10 +143,6 @@ export default {
   line-height: 166%;
   color: #05122d;
   opacity: 0.4;
-}
-.card-btn {
-  width: 239px;
-  height: 40px;
 }
 .card-circle.v-icon.v-icon {
   font-size: 10px;

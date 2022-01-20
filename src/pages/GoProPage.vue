@@ -75,13 +75,7 @@
               label="Identify opportunity keywords."
               v-model="checkbox"
             />
-            <v-btn
-              class="card-btn ml-4 mt-5 text-capitalize"
-              color="primary"
-              outlined
-            >
-              Pick Plan
-            </v-btn>
+            <pick-plan-button/>
           </v-card>
           <v-img
             src="../assets/keywords.png"
@@ -112,13 +106,7 @@
               label="WDF*IDF analysis"
               v-model="checkbox"
             />
-            <v-btn
-              class="card-btn ml-4 mt-5 text-capitalize"
-              color="primary"
-              outlined
-            >
-              Pick Plan
-            </v-btn>
+            <pick-plan-button/>
           </v-card>
         </v-container>
         <v-container class="block d-flex justify-space-around">
@@ -136,13 +124,7 @@
               label="See the ranking development of you projects"
               v-model="checkbox"
             />
-            <v-btn
-              class="card-btn ml-4 mt-5 text-capitalize"
-              color="primary"
-              outlined
-            >
-              Pick Plan
-            </v-btn>
+            <pick-plan-button/>
           </v-card>
           <v-img
             src="../assets/rankTracker.png"
@@ -157,10 +139,12 @@
 
 <script>
 import PriceCard from "../components/PriceCard.vue";
+import PickPlanButton from "../components/PickPlanButton.vue"
 
 export default {
   components: {
     PriceCard,
+    PickPlanButton
   },
   data() {
     return {
