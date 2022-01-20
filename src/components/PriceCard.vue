@@ -1,70 +1,70 @@
 <template>
   <div>
-    <v-hover v-slot:default="{ hover }">
-      <v-card
-        elevation="1"
-        :class="
-          hover
-            ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
-            : 'card mx-auto pl-3 pt-4 rounded-xl'
-        "
-      >
-        <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
-          <span class="title">Starter</span>
-          <div class="d-flex align-center">
-            <span class="price">{{ price }}</span>
-            <span class="price-period ml-2">/Month</span>
-          </div>
-        </v-card-title>
-        <v-card-text class="card-row ml-7 mb-1">
-          <span class="card-text">{{ projects }}</span>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-1">
-          <span class="card-text">{{ users }}</span>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-1">
-          <v-icon class="card-circle mr-1">mdi-checkbox-blank-circle</v-icon>
-          <v-icon class="card-circle mr-1"
-            >mdi-checkbox-blank-circle-outline</v-icon
-          >
-          <v-icon class="card-circle">mdi-checkbox-blank-circle-outline</v-icon>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-1">
-          <span class="card-text mr-1">{{ competitor }}</span>
-          <span class="card-subtitle">websites per project</span>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-1">
-          <span class="card-text mr-1">{{ keyword }}</span>
-          <span class="card-subtitle">(weekly)</span>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-1">
-          <span class="card-text mr-1">{{ site }}</span>
-          <span class="card-subtitle">per project</span>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-1">
-          <span class="card-text">{{ search }}</span>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-1">
-          <v-icon class="card-check">mdi-check</v-icon>
-        </v-card-text>
-        <v-card-text class="card-row ml-7 mb-8">
-          <v-icon class="card-check">mdi-check</v-icon>
-        </v-card-text>
-        <v-btn
-          class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-          color="primary"
-          outlined
+    <v-card
+      elevation="1"
+      :class="
+        cardBlueBorder
+          ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
+          : 'card mx-auto pl-3 pt-4 rounded-xl'
+      "
+    >
+      <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
+        <span class="title">{{ title }}</span>
+        <div class="d-flex align-center">
+          <span class="price">{{ price }}</span>
+          <span class="price-period ml-2">/Month</span>
+        </div>
+      </v-card-title>
+      <v-card-text class="card-row ml-7 mb-1">
+        <span class="card-text">{{ projects }}</span>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-1">
+        <span class="card-text">{{ users }}</span>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-1">
+        <v-icon class="card-circle mr-1">{{ circle1 }}</v-icon>
+        <v-icon class="card-circle mr-1"
+          >{{ circle2 }}</v-icon
         >
-          Pick Plan
-        </v-btn>
-        <v-divider></v-divider>
-        <v-card-text class="card-footer mt-5 ml-2">
-          <span class="card-footer-text">
-            {{ footerText }}
-          </span>
-        </v-card-text>
-      </v-card>
-    </v-hover>
+        <v-icon class="card-circle">{{ circle3 }}</v-icon>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-1">
+        <span class="card-text mr-1">{{ competitor }}</span>
+        <span class="card-subtitle">websites per project</span>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-1">
+        <span class="card-text mr-1">{{ keyword }}</span>
+        <span class="card-subtitle">(weekly)</span>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-1">
+        <span class="card-text mr-1">{{ site }}</span>
+        <span class="card-subtitle">per project</span>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-1">
+        <span class="card-text">{{ search }}</span>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-1">
+        <v-icon class="card-check">mdi-check</v-icon>
+      </v-card-text>
+      <v-card-text class="card-row ml-7 mb-8">
+        <v-icon class="card-check">mdi-check</v-icon>
+      </v-card-text>
+      <v-btn
+        class="card-btn ml-5 mt-5 mb-10 text-capitalize"
+        color="primary"
+        outlined
+        @mouseover="cardBlueBorder = true"
+        @mouseleave="cardBlueBorder = false"
+      >
+        Pick Plan
+      </v-btn>
+      <v-divider></v-divider>
+      <v-card-text class="card-footer mt-5 ml-2">
+        <span class="card-footer-text">
+          {{ footerText }}
+        </span>
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
@@ -74,10 +74,13 @@ export default {
   props: [
     "card",
     "id",
+    "title",
     "price",
     "projects",
     "users",
-    "reporting",
+    "circle1",
+    "circle2",
+    "circle3",
     "competitor",
     "keyword",
     "site",
@@ -88,49 +91,7 @@ export default {
   ],
   data: function () {
     return {
-      //   cards: [
-      //     {
-      //       id: 1,
-      //       price: "$29",
-      //       projects: 1,
-      //       users: 1,
-      //       reporting: "",
-      //       competitor: 2,
-      //       keyword: 500,
-      //       site: "5k",
-      //       search: 1,
-      //       seo: "",
-      //       customer: "",
-      //       footerText:
-      //         "Best for small and micro businesses with none to little SEO knowledge or web professionals serving them.",
-      //     },
-      //     {
-      //       id: 2,
-      //       projects: 1,
-      //       users: 1,
-      //       reporting: 1,
-      //       competitor: 1,
-      //       keyword: 1,
-      //       site: 1,
-      //       search: 1,
-      //       seo: 1,
-      //       customer: 1,
-      //       footerText: 1,
-      //     },
-      //     {
-      //       id: 3,
-      //       projects: 1,
-      //       users: 1,
-      //       reporting: 1,
-      //       competitor: 1,
-      //       keyword: 1,
-      //       site: 1,
-      //       search: 1,
-      //       seo: 1,
-      //       customer: 1,
-      //       footerText: 1,
-      //     },
-      //   ],
+      cardBlueBorder: false,
     };
   },
 };

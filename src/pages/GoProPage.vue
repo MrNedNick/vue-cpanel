@@ -40,230 +40,25 @@
           </v-card-text>
         </v-card>
 
-        <price-card 
-        v-for="card in cards" 
-        :key="card.id"
-        :price="card.price"
-        :projects="card.projects"
-        :users="card.users"
-        :reporting="card.reporting"
-        :competitor="card.competitor"
-        :keyword="card.keyword"
-        :site="card.site"
-        :search="card.search"
-        :seo="card.seo"
-        :customer="card.customer"
-        :footerText="card.footerText"
+        <price-card
+          class="mr-9"
+          v-for="card in cards"
+          :key="card.id"
+          :title="card.title"
+          :price="card.price"
+          :projects="card.projects"
+          :users="card.users"
+          :circle1="card.circle1"
+          :circle2="card.circle2"
+          :circle3="card.circle3"
+          :competitor="card.competitor"
+          :keyword="card.keyword"
+          :site="card.site"
+          :search="card.search"
+          :seo="card.seo"
+          :customer="card.customer"
+          :footerText="card.footerText"
         />
-
-        <!-- <v-hover v-slot:default="{ hover }">
-          <v-card
-            elevation="1"
-            :class="
-              hover
-                ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
-                : 'card mx-auto pl-3 pt-4 rounded-xl'
-            "
-          >
-            <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
-              <span class="title">Starter</span>
-              <div class="d-flex align-center">
-                <span class="price">$29</span>
-                <span class="price-period ml-2">/Month</span>
-              </div>
-            </v-card-title>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">1</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">1</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <v-icon class="card-circle mr-1"
-                >mdi-checkbox-blank-circle</v-icon
-              >
-              <v-icon class="card-circle mr-1"
-                >mdi-checkbox-blank-circle-outline</v-icon
-              >
-              <v-icon class="card-circle"
-                >mdi-checkbox-blank-circle-outline</v-icon
-              >
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">2</span>
-              <span class="card-subtitle">websites per project</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">500</span>
-              <span class="card-subtitle">(weekly)</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">5k</span>
-              <span class="card-subtitle">per project</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">1</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <v-icon class="card-check">mdi-check</v-icon>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-8">
-              <v-icon class="card-check">mdi-check</v-icon>
-            </v-card-text>
-            <v-btn
-              class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-              color="primary"
-              outlined
-            >
-              Pick Plan
-            </v-btn>
-            <v-divider></v-divider>
-            <v-card-text class="card-footer mt-5 ml-2">
-              <span class="card-footer-text">
-                Best for <b>small</b> and <b>micro businesses</b> with none to
-                little SEO knowledge or web professionals serving them.
-              </span>
-            </v-card-text>
-          </v-card>
-        </v-hover>
-        <v-hover v-slot:default="{ hover }">
-          <v-card
-            elevation="1"
-            :class="
-              hover
-                ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
-                : 'card mx-auto pl-3 pt-4 rounded-xl'
-            "
-          >
-            <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
-              <span class="title">Pro</span>
-              <div class="d-flex align-center">
-                <span class="price">$99</span>
-                <span class="price-period ml-2">/Month</span>
-              </div>
-            </v-card-title>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">5</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">1</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <v-icon class="card-circle mr-1"
-                >mdi-checkbox-blank-circle</v-icon
-              >
-              <v-icon class="card-circle mr-1"
-                >mdi-checkbox-blank-circle</v-icon
-              >
-              <v-icon class="card-circle"
-                >mdi-checkbox-blank-circle-outline</v-icon
-              >
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">3</span>
-              <span class="card-subtitle">websites per project</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">2,500</span>
-              <span class="card-subtitle">(weekly)</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">10</span>
-              <span class="card-subtitle">per project</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">10</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <v-icon class="card-check">mdi-check</v-icon>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-8">
-              <v-icon class="card-check">mdi-check</v-icon>
-            </v-card-text>
-            <v-btn
-              class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-              color="primary"
-              outlined
-            >
-              Pick Plan
-            </v-btn>
-            <v-divider></v-divider>
-            <v-card-text class="card-footer mt-5 ml-2">
-              <span class="card-footer-text">
-                <b>Web professionals, medium businesses</b> and In-house SEO
-                managers with little to advanced SEO knowledge.
-              </span>
-            </v-card-text>
-          </v-card>
-        </v-hover>
-
-        <v-hover v-slot:default="{ hover }">
-          <v-card
-            elevation="1"
-            :class="
-              hover
-                ? 'hover-card mx-auto pl-3 pt-4 rounded-xl'
-                : 'card mx-auto pl-3 pt-4 rounded-xl'
-            "
-          >
-            <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
-              <span class="title">Agency</span>
-              <div class="d-flex align-center">
-                <span class="price">$219</span>
-                <span class="price-period ml-2">/Month</span>
-              </div>
-            </v-card-title>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">30</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">5</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <v-icon class="card-circle mr-1"
-                >mdi-checkbox-blank-circle</v-icon
-              >
-              <v-icon class="card-circle mr-1"
-                >mdi-checkbox-blank-circle</v-icon
-              >
-              <v-icon class="card-circle">mdi-checkbox-blank-circle</v-icon>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">6</span>
-              <span class="card-subtitle">websites per project</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">5,000</span>
-              <span class="card-subtitle">(weekly)</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text mr-1">50</span>
-              <span class="card-subtitle">per project</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <span class="card-text">Unlimited</span>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-1">
-              <v-icon class="card-check">mdi-check</v-icon>
-            </v-card-text>
-            <v-card-text class="card-row ml-7 mb-8">
-              <v-icon class="card-check">mdi-check</v-icon>
-            </v-card-text>
-            <v-btn
-              class="card-btn ml-5 mt-5 mb-10 text-capitalize"
-              color="primary"
-              outlined
-            >
-              Pick Plan
-            </v-btn>
-            <v-divider></v-divider>
-            <v-card-text class="card-footer mt-5 ml-2">
-              <span class="card-footer-text">
-                Best option for small and medium agencies offering SEO.
-              </span>
-            </v-card-text>
-          </v-card>
-        </v-hover> -->
       </v-container>
 
       <v-container class="bottom-blocks mt-16">
@@ -373,14 +168,17 @@ export default {
       cards: [
         {
           id: 1,
+          title: "Starter",
           price: "$29",
-          projects: '1',
-          users: '1',
-          reporting: "",
-          competitor: '2',
-          keyword: '500',
+          projects: "1",
+          users: "1",
+          circle1: "mdi-checkbox-blank-circle",
+          circle2: "mdi-checkbox-blank-circle-outline",
+          circle3: "mdi-checkbox-blank-circle-outline",
+          competitor: "2",
+          keyword: "500",
           site: "5k",
-          search: '1',
+          search: "1",
           seo: "",
           customer: "",
           footerText:
@@ -388,31 +186,38 @@ export default {
         },
         {
           id: 2,
-          price: '$30',
-          projects: 1,
+          title: "Pro",
+          price: "$99",
+          projects: 5,
           users: 1,
-          reporting: 1,
-          competitor: 1,
-          keyword: 1,
-          site: 1,
-          search: 1,
-          seo: 1,
-          customer: 1,
-          footerText: 1,
+          circle1: "mdi-checkbox-blank-circle",
+          circle2: "mdi-checkbox-blank-circle",
+          circle3: "mdi-checkbox-blank-circle-outline",
+          competitor: 3,
+          keyword: "2,500",
+          site: 10,
+          search: 10,
+          seo: "",
+          customer: "",
+          footerText:
+            "Web professionals, medium businesses and In-house SEO managers with little to advanced SEO knowledge.",
         },
         {
           id: 3,
-          price: '$31',
-          projects: 1,
-          users: 1,
-          reporting: 1,
-          competitor: 1,
-          keyword: 1,
-          site: 1,
-          search: 1,
-          seo: 1,
-          customer: 1,
-          footerText: 1,
+          title: "Agency",
+          price: "$219",
+          projects: 30,
+          users: 5,
+          circle1: "mdi-checkbox-blank-circle",
+          circle2: "mdi-checkbox-blank-circle",
+          circle3: "mdi-checkbox-blank-circle",
+          competitor: 6,
+          keyword: "5,000",
+          site: 50,
+          search: "Unlimited",
+          seo: "",
+          customer: "",
+          footerText: "Best option for small and medium agencies offering SEO.",
         },
       ],
     };
