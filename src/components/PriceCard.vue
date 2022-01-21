@@ -9,6 +9,7 @@
       "
     >
       <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
+        <span class="green-text">{{ greenText }}</span>
         <span class="title">{{ title }}</span>
         <div class="d-flex align-center">
           <span class="price">{{ price }}</span>
@@ -72,6 +73,7 @@ export default {
   props: [
     "card",
     "id",
+    "greenText",
     "title",
     "price",
     "projects",
@@ -117,6 +119,19 @@ export default {
   width: 303px;
   height: 974px;
   border: 2px solid blue;
+}
+.green-text {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: Source Sans Pro;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #33b768;
+  padding: 1px 4px;
+  background: rgba(51, 183, 104, 0.08);
+  border-radius: 2px;
 }
 .title {
   font-size: 22px;

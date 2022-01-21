@@ -6,9 +6,14 @@
         <span class="page-subtitle"
           >We support beginners at every step of their SEO journey.</span
         >
-        <div id="switcher-wrapper">
-          <v-switch class="mt-16 mb-6 switcher" inset />
-        </div>
+        <v-container
+          class="switcher-wrapper d-flex justify-center align-center mt-16 mb-6"
+        >
+          <span class="mr-5 switcher-text">Bill Monthly</span>
+          <v-switch :value="false" class="switcher" inset />
+          <span class="ml-1 mr-3 switcher-text text-grey">Bill Yearly</span>
+          <span class="switcher-text-green">SAVE UP</span>
+        </v-container>
       </v-container>
       <v-container class="card-wrapper d-flex justify-center">
         <v-card class="card-left mx-auto mr-0" elevation="0">
@@ -45,6 +50,7 @@
           class="mr-9"
           v-for="card in cards"
           :key="card.id"
+          :greenText="card.greenText"
           :title="card.title"
           :price="card.price"
           :projects="card.projects"
@@ -153,6 +159,7 @@ export default {
       cards: [
         {
           id: 1,
+          greenText: "",
           title: "Starter",
           price: "$29",
           projects: "1",
@@ -171,6 +178,7 @@ export default {
         },
         {
           id: 2,
+          greenText: "MOST POPULAR",
           title: "Pro",
           price: "$99",
           projects: 5,
@@ -189,6 +197,7 @@ export default {
         },
         {
           id: 3,
+          greenText: "",
           title: "Agency",
           price: "$219",
           projects: 30,
@@ -231,36 +240,42 @@ export default {
   opacity: 0.4;
 }
 /* switch */
-/* #switcher-wrapper .theme--light.v-input {
-  color: red;
-}
-#switcher-wrapper .theme--light.v-input .primary--text {
-  color: red !important;
-} */
-
-/* .v-application #switcher-wrapper .primary--text {
-  color: #3366FF !important;
-  caret-color: #3366FF !important;
-} */
-
-/* background */
 .v-input.theme--light.v-input--switch .v-input--switch__track {
-  color: #3366FF !important;
+  color: #3366ff !important;
   opacity: 1;
 }
 .v-input.theme--light.v-input--switch .v-input--switch__track .primary--text {
-  color: #3366FF !important;
+  color: #3366ff !important;
   opacity: 1;
 }
-/* circle */
-.theme--light.v-input--switch .v-input--switch__thumb{
-  color: white ;
+.theme--light.v-input--switch .v-input--switch__thumb {
+  color: white;
 }
 .theme--light.v-input--switch .v-input--switch__thumb.primary--text {
   color: white !important;
 }
 .v-input--selection-controls__ripple:before {
-  color: #3366FF ;
+  color: #3366ff;
+}
+.switcher-text {
+  font-family: Source Sans Pro;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 166%;
+  color: #05122d;
+}
+.switcher-text.text-grey {
+  opacity: 0.4;
+}
+.switcher-text-green {
+  font-family: Source Sans Pro;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #33b768;
+  padding: 1px 4px;
+  background: rgba(51, 183, 104, 0.08);
+  border-radius: 2px;
 }
 
 /* cards */
@@ -268,7 +283,7 @@ export default {
   width: 1240px;
   background-color: #f5f6f7;
 }
-.card-left.theme--light.v-card{
+.card-left.theme--light.v-card {
   margin-right: 100px;
   padding-top: 170px;
   width: 200px;
