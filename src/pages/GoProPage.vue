@@ -7,7 +7,7 @@
           >We support beginners at every step of their SEO journey.</span
         >
         <div id="switcher-wrapper">
-          <v-switch class="mt-16 mb-6 switcher" inset label="Switch" />
+          <v-switch class="mt-16 mb-6 switcher" inset />
         </div>
       </v-container>
       <v-container class="card-wrapper d-flex justify-center">
@@ -259,16 +259,17 @@ export default {
 .theme--light.v-input--switch .v-input--switch__thumb.primary--text {
   color: white !important;
 }
-/* label */
-#switcher-wrapper .theme--light.v-label {
-  color: red;
+.v-input--selection-controls__ripple:before {
+  color: #3366FF ;
 }
 
 /* cards */
 .card-wrapper {
   width: 1240px;
+  background-color: #f5f6f7;
 }
-.card-left {
+.card-left.theme--light.v-card{
+  margin-right: 100px;
   padding-top: 170px;
   width: 200px;
   background-color: #f5f6f7;
@@ -286,7 +287,7 @@ export default {
 .bottom-blocks {
   max-width: 1000px;
 }
-.checkbox-card {
+.bottom-blocks .theme--light.v-card {
   background-color: #f5f6f7;
 }
 .checkbox-card-title {
