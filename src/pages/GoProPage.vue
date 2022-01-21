@@ -6,8 +6,9 @@
         <span class="page-subtitle"
           >We support beginners at every step of their SEO journey.</span
         >
-
-        <v-switch class="mt-16 mb-6 switcher" inset label="Switch" />
+        <div id="switcher-wrapper">
+          <v-switch class="mt-16 mb-6 switcher" inset label="Switch" />
+        </div>
       </v-container>
       <v-container class="card-wrapper d-flex justify-center">
         <v-card class="card-left mx-auto mr-0" elevation="0">
@@ -75,7 +76,7 @@
               label="Identify opportunity keywords."
               v-model="checkbox"
             />
-            <pick-plan-button/>
+            <pick-plan-button />
           </v-card>
           <v-img
             src="../assets/keywords.png"
@@ -106,7 +107,7 @@
               label="WDF*IDF analysis"
               v-model="checkbox"
             />
-            <pick-plan-button/>
+            <pick-plan-button />
           </v-card>
         </v-container>
         <v-container class="block d-flex justify-space-around">
@@ -124,7 +125,7 @@
               label="See the ranking development of you projects"
               v-model="checkbox"
             />
-            <pick-plan-button/>
+            <pick-plan-button />
           </v-card>
           <v-img
             src="../assets/rankTracker.png"
@@ -139,16 +140,16 @@
 
 <script>
 import PriceCard from "../components/PriceCard.vue";
-import PickPlanButton from "../components/PickPlanButton.vue"
+import PickPlanButton from "../components/PickPlanButton.vue";
 
 export default {
   components: {
     PriceCard,
-    PickPlanButton
+    PickPlanButton,
   },
   data() {
     return {
-      checkbox: true,
+      checkbox: "true",
       cards: [
         {
           id: 1,
@@ -209,7 +210,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .wrapper {
   font-family: Source Sans Pro;
   color: #05122d;
@@ -230,15 +231,43 @@ export default {
   opacity: 0.4;
 }
 /* switch */
+/* #switcher-wrapper .theme--light.v-input {
+  color: red;
+}
+#switcher-wrapper .theme--light.v-input .primary--text {
+  color: red !important;
+} */
 
-/* .v-application .primary--text {
-    color: white !important;
-    caret-color: white !important;
- } */
+/* .v-application #switcher-wrapper .primary--text {
+  color: #3366FF !important;
+  caret-color: #3366FF !important;
+} */
+
+/* background */
+.v-input.theme--light.v-input--switch .v-input--switch__track {
+  color: #3366FF !important;
+  opacity: 1;
+}
+.v-input.theme--light.v-input--switch .v-input--switch__track .primary--text {
+  color: #3366FF !important;
+  opacity: 1;
+}
+/* circle */
+.theme--light.v-input--switch .v-input--switch__thumb{
+  color: white ;
+}
+.theme--light.v-input--switch .v-input--switch__thumb.primary--text {
+  color: white !important;
+}
+/* label */
+#switcher-wrapper .theme--light.v-label {
+  color: red;
+}
+
+/* cards */
 .card-wrapper {
   width: 1240px;
 }
-/* card left */
 .card-left {
   padding-top: 170px;
   width: 200px;
