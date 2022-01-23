@@ -72,16 +72,24 @@
         <v-container class="block d-flex justify-space-around align-center">
           <v-card class="checkbox-card" elevation="0">
             <v-card-title class="checkbox-card-title">Keywords</v-card-title>
-            <v-checkbox
-              class="checkbox ml-4"
-              label="Analyze the terms that are important to you & your competition."
-              v-model="checkbox"
-            />
-            <v-checkbox
-              class="checkbox pt-0 mt-0 ml-4"
-              label="Identify opportunity keywords."
-              v-model="checkbox"
-            />
+            <div class="checkbox">
+              <div class="check-wrapper">
+                <v-icon class="check">mdi-check</v-icon>
+              </div>
+              <v-card-text class="check-text"
+                >Analyze the terms that are important to you & your
+                competition.</v-card-text
+              >
+            </div>
+
+            <div class="checkbox">
+              <div class="check-wrapper">
+                <v-icon class="check">mdi-check</v-icon>
+              </div>
+              <v-card-text class="check-text"
+                >Identify opportunity keywords.</v-card-text
+              >
+            </div>
             <pick-plan-button />
           </v-card>
           <v-img
@@ -98,21 +106,29 @@
           />
           <v-card class="checkbox-card" elevation="0">
             <v-card-title class="checkbox-card-title">Site Audit</v-card-title>
-            <v-checkbox
-              class="checkbox ml-4"
-              label="Optimize technical implementation."
-              v-model="checkbox"
-            />
-            <v-checkbox
-              class="checkbox pt-0 mt-0 ml-4"
-              label="Avoid technical errors."
-              v-model="checkbox"
-            />
-            <v-checkbox
-              class="checkbox pt-0 mt-0 ml-4"
-              label="WDF*IDF analysis"
-              v-model="checkbox"
-            />
+            <div class="checkbox">
+              <div class="check-wrapper">
+                <v-icon class="check">mdi-check</v-icon>
+              </div>
+              <v-card-text class="check-text"
+                >Optimize technical implementation.</v-card-text
+              >
+            </div>
+
+            <div class="checkbox">
+              <div class="check-wrapper">
+                <v-icon class="check">mdi-check</v-icon>
+              </div>
+              <v-card-text class="check-text"
+                >Avoid technical errors.</v-card-text
+              >
+            </div>
+            <div class="checkbox">
+              <div class="check-wrapper">
+                <v-icon class="check">mdi-check</v-icon>
+              </div>
+              <v-card-text class="check-text">WDF*IDF analysis</v-card-text>
+            </div>
             <pick-plan-button />
           </v-card>
         </v-container>
@@ -121,16 +137,24 @@
             <v-card-title class="checkbox-card-title"
               >Rank Tracking</v-card-title
             >
-            <v-checkbox
-              class="checkbox ml-4"
-              label="Monitor your most important keywords."
-              v-model="checkbox"
-            />
-            <v-checkbox
-              class="checkbox pt-0 mt-0 ml-4"
-              label="See the ranking development of you projects"
-              v-model="checkbox"
-            />
+            <div class="checkbox">
+              <div class="check-wrapper">
+                <v-icon class="check">mdi-check</v-icon>
+              </div>
+              <v-card-text class="check-text"
+                >Monitor your most important keywords.</v-card-text
+              >
+            </div>
+
+            <div class="checkbox">
+              <div class="check-wrapper">
+                <v-icon class="check">mdi-check</v-icon>
+              </div>
+              <v-card-text class="check-text"
+                >See the ranking development of you projects</v-card-text
+              >
+            </div>
+
             <pick-plan-button />
           </v-card>
           <v-img
@@ -311,5 +335,31 @@ export default {
   font-weight: 600;
   font-size: 28px;
   line-height: 35px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+.check-text {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 166%;
+  color: #05122d;
+  opacity: 0.6;
+}
+.check-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: rgba(51, 102, 255, 0.08);
+}
+.check.v-icon.v-icon {
+  color: #3366ff;
+  font-size: 20px;
 }
 </style>
