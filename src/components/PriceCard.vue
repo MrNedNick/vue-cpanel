@@ -10,7 +10,12 @@
     >
       <v-card-title class="d-flex flex-column align-start mb-8 ml-6">
         <span class="green-text">{{ greenText }}</span>
-        <span class="title">{{ title }}</span>
+        <div class="title-wrapper">
+          <span class="title mr-3">{{ title }}</span>
+          <span class="old-price">{{ oldPrice }}</span>
+          
+        </div>
+        <div class="line"></div>
         <div class="d-flex align-center">
           <span class="price">{{ price }}</span>
           <span class="price-period ml-2">/Month</span>
@@ -48,10 +53,7 @@
       <v-card-text class="card-row ml-7 mb-8">
         <v-icon class="card-check">mdi-check</v-icon>
       </v-card-text>
-      <pick-plan-button         
-        @mouseOver="mouseOver"
-        @mouseLeave="mouseLeave"
-        />
+      <pick-plan-button @mouseOver="mouseOver" @mouseLeave="mouseLeave" />
       <v-divider></v-divider>
       <v-card-text class="card-footer mt-5 ml-2">
         <span class="card-footer-text">
@@ -63,12 +65,12 @@
 </template>
 
 <script>
-import PickPlanButton from "./PickPlanButton.vue"
+import PickPlanButton from "./PickPlanButton.vue";
 
 export default {
   name: "PriceCard",
   components: {
-      PickPlanButton,
+    PickPlanButton,
   },
   props: [
     "card",
@@ -76,6 +78,7 @@ export default {
     "greenText",
     "title",
     "price",
+    "oldPrice",
     "projects",
     "users",
     "circle1",
@@ -133,10 +136,30 @@ export default {
   background: rgba(51, 183, 104, 0.08);
   border-radius: 2px;
 }
+/* .title-wrapper {
+  display: flex;
+  position: relative;
+} */
 .title {
   font-size: 22px;
   line-height: 28px;
 }
+.old-price {
+  font-family: Source Sans Pro;
+  font-size: 22px;
+  line-height: 28px;
+  color: #05122d;
+  opacity: 0.4;
+}
+/* .line {
+    display: absolute;
+    height: 5px;
+    width: 45px;
+    top: 50px;
+    left: 0px;
+    background-color: #E8C300;
+    transform: rotate(135deg);
+} */
 .price {
   font-weight: bold;
   font-size: 56px;

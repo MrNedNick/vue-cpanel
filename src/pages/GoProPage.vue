@@ -9,9 +9,25 @@
         <v-container
           class="switcher-wrapper d-flex justify-center align-center mt-16 mb-6"
         >
-          <span class="mr-5 switcher-text">Bill Monthly</span>
-          <v-switch :value="false" class="switcher" inset />
-          <span class="ml-1 mr-3 switcher-text text-grey">Bill Yearly</span>
+          <span
+            :class="
+              switchValue
+                ? 'ml-1 mr-3 switcher-text text-grey'
+                : 'ml-1 mr-3 switcher-text'
+            "
+          >
+            Bill Monthly
+          </span>
+          <v-switch v-model="switchValue" class="switcher" inset />
+          <span
+            :class="
+              switchValue
+                ? 'ml-1 mr-3 switcher-text'
+                : 'ml-1 mr-3 switcher-text text-grey'
+            "
+          >
+            Bill Yearly
+          </span>
           <span class="switcher-text-green">SAVE UP</span>
         </v-container>
       </v-container>
@@ -52,7 +68,8 @@
           :key="card.id"
           :greenText="card.greenText"
           :title="card.title"
-          :price="card.price"
+          :price="switchValue ? card.yearlyPrice : card.price"
+          :oldPrice="switchValue ? card.oldPrice : ''"
           :projects="card.projects"
           :users="card.users"
           :circle1="card.circle1"
@@ -179,12 +196,15 @@ export default {
   },
   data() {
     return {
+      switchValue: false,
       cards: [
         {
           id: 1,
           greenText: "",
           title: "Starter",
           price: "$29",
+          oldPrice: "$29",
+          yearlyPrice: "$19",
           projects: "1",
           users: "1",
           circle1: "mdi-checkbox-blank-circle",
@@ -204,6 +224,8 @@ export default {
           greenText: "MOST POPULAR",
           title: "Pro",
           price: "$99",
+          oldPrice: "$99",
+          yearlyPrice: "$69",
           projects: 5,
           users: 1,
           circle1: "mdi-checkbox-blank-circle",
@@ -223,6 +245,8 @@ export default {
           greenText: "",
           title: "Agency",
           price: "$219",
+          oldPrice: "$219",
+          yearlyPrice: "$199",
           projects: 30,
           users: 5,
           circle1: "mdi-checkbox-blank-circle",
