@@ -179,7 +179,6 @@ export default {
   },
   data() {
     return {
-      checkbox: "true",
       cards: [
         {
           id: 1,
@@ -336,7 +335,7 @@ export default {
   font-size: 28px;
   line-height: 35px;
 }
-
+/* checkbox */
 .checkbox {
   display: flex;
   align-items: center;
