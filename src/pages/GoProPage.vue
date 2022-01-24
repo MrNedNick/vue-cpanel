@@ -162,7 +162,6 @@
                 >Monitor your most important keywords.</v-card-text
               >
             </div>
-
             <div class="checkbox">
               <div class="check-wrapper">
                 <v-icon class="check">mdi-check</v-icon>
@@ -171,7 +170,6 @@
                 >See the ranking development of you projects</v-card-text
               >
             </div>
-
             <pick-plan-button />
           </v-card>
           <v-img

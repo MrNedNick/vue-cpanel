@@ -5,6 +5,10 @@
       outlined
       @mouseover="mouseOver"
       @mouseleave="mouseLeave"
+
+      @click="loader = 'loading'"
+      :loading="loading"
+      :disabled="loading"
     >
       Pick Plan
     </v-btn>
@@ -13,6 +17,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      loader: null,
+      loading: false,
+    };
+  },
   methods: {
     mouseOver: function () {
       this.$emit("mouseOver");
@@ -21,11 +31,20 @@ export default {
       this.$emit("mouseLeave");
     },
   },
+  watch: {
+    loader() {
+      const l = this.loader;
+      this[l] = !this[l];
+
+      setTimeout(() => (this[l] = false), 2000);
+
+      this.loader = null;
+    },
+  },
 };
 </script>
 
 <style lang='scss'>
-
 .plan-btn {
   width: 239px;
   height: 40px;
@@ -39,12 +58,45 @@ export default {
   }
 }
 .plan-btn.theme--light.v-btn:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
-.plan-btn.theme--light.v-btn:hover .v-btn__content{
-    color: white;
+.plan-btn.theme--light.v-btn:hover .v-btn__content {
+  color: white;
 }
 .v-btn:before {
-    background-color: #3366FF;
+  background-color: #3366ff;
+}
+
+@-moz-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
