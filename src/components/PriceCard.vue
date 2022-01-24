@@ -160,6 +160,9 @@ export default {
     opacity: 0.4;
     transform: rotate(135deg);
 }
+.hide-line .line {
+  display: none;
+}
 .price {
   font-weight: bold;
   font-size: 56px;

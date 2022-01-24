@@ -63,7 +63,7 @@
         </v-card>
 
         <price-card
-          class="mr-9"
+          :class="switchValue ? 'mr-9' : 'mr-9 hide-line'"
           v-for="card in cards"
           :key="card.id"
           :greenText="card.greenText"
