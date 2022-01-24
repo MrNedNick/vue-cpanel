@@ -273,9 +273,25 @@ export default {
   },
   methods: {
     clickBtn: function () {
-      setTimeout(() => (this.snackbar = true), 2000);
+      new Promise(function mockRequest(resolve, reject) {
+        setTimeout(() => {
+          // 80% probability of getting true
+          resolve();
+          if (Math.random() < 0.8) {
+            resolve(true);
+          } else {
+            reject(false);
+          }
+        }, 2000)
+          .then(function (result) {
+            alert(result);
+          })
+          .catch(function (err) {
+            setTimeout(() => (this.snackbar = !err), 2000);
+          });
+      });
     },
-  }
+  },
 };
 </script>
 
