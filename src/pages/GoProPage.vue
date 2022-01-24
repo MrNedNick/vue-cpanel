@@ -278,17 +278,18 @@ export default {
           // 80% probability of getting true
           resolve();
           if (Math.random() < 0.8) {
-            resolve(true);
+            resolve("done");
           } else {
-            reject(false);
+            reject("error");
           }
         }, 2000)
-          .then(function (result) {
-            alert(result);
-          })
-          .catch(function (err) {
-            setTimeout(() => (this.snackbar = !err), 2000);
-          });
+        .then(function (result) {
+          alert(result);
+        })
+        .catch(function (err) {
+          alert(err)
+          // setTimeout(() => (this.snackbar = true), 2000);
+        });
       });
     },
   },
