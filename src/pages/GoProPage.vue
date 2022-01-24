@@ -82,6 +82,7 @@
           :seo="card.seo"
           :customer="card.customer"
           :footerText="card.footerText"
+          @clickBtn="clickBtn"
         />
       </v-container>
 
@@ -107,7 +108,7 @@
                 >Identify opportunity keywords.</v-card-text
               >
             </div>
-            <pick-plan-button />
+            <pick-plan-button @clickBtn="clickBtn" />
           </v-card>
           <v-img
             src="../assets/keywords.png"
@@ -146,7 +147,7 @@
               </div>
               <v-card-text class="check-text">WDF*IDF analysis</v-card-text>
             </div>
-            <pick-plan-button />
+            <pick-plan-button @clickBtn="clickBtn" />
           </v-card>
         </v-container>
         <v-container class="block d-flex justify-space-around">
@@ -170,7 +171,7 @@
                 >See the ranking development of you projects</v-card-text
               >
             </div>
-            <pick-plan-button />
+            <pick-plan-button @clickBtn="clickBtn" />
           </v-card>
           <v-img
             src="../assets/rankTracker.png"
@@ -180,6 +181,15 @@
         </v-container>
       </v-container>
     </v-container>
+    <v-snackbar v-model="snackbar">
+      {{ snackbarText }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </v-main>
 </template>
 
@@ -194,6 +204,8 @@ export default {
   data() {
     return {
       switchValue: false,
+      snackbar: false,
+      snackbarText: `Something went wrong...`,
       cards: [
         {
           id: 1,
@@ -260,6 +272,11 @@ export default {
       ],
     };
   },
+  methods: {
+    clickBtn: function () {
+      setTimeout(() => (this.snackbar = true), 2000);
+    },
+  }
 };
 </script>
 

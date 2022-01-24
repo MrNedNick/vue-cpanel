@@ -15,7 +15,7 @@
           <span class="old-price">{{ oldPrice }}</span>
           <div class="line"></div>
         </div>
-        
+
         <div class="d-flex align-center">
           <span class="price">{{ price }}</span>
           <span class="price-period ml-2">/Month</span>
@@ -53,7 +53,11 @@
       <v-card-text class="card-row ml-7 mb-8">
         <v-icon class="card-check">mdi-check</v-icon>
       </v-card-text>
-      <pick-plan-button @mouseOver="mouseOver" @mouseLeave="mouseLeave" />
+      <pick-plan-button
+        @mouseOver="mouseOver"
+        @mouseLeave="mouseLeave"
+        @clickBtn="clickBtn"
+      />
       <v-divider></v-divider>
       <v-card-text class="card-footer mt-5 ml-2">
         <span class="card-footer-text">
@@ -106,6 +110,9 @@ export default {
       this.cardBlueBorder = false;
       this.cardElevation = 1;
     },
+    clickBtn: function () {
+      this.$emit("clickBtn")
+    }
   },
 };
 </script>
@@ -151,14 +158,14 @@ export default {
   opacity: 0.4;
 }
 .line {
-    position: absolute;
-    height: 1px;
-    width: 43px;
-    top: 13px;
-    right: -6px;
-    background-color: #05122D;
-    opacity: 0.4;
-    transform: rotate(135deg);
+  position: absolute;
+  height: 1px;
+  width: 43px;
+  top: 13px;
+  right: -6px;
+  background-color: #05122d;
+  opacity: 0.4;
+  transform: rotate(135deg);
 }
 .hide-line .line {
   display: none;

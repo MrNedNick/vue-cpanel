@@ -6,7 +6,7 @@
       @mouseover="mouseOver"
       @mouseleave="mouseLeave"
 
-      @click="loader = 'loading'"
+      @click="clickBtn"
       :loading="loading"
       :disabled="loading"
     >
@@ -30,6 +30,11 @@ export default {
     mouseLeave: function () {
       this.$emit("mouseLeave");
     },
+    clickBtn: function () {
+      this.loader = 'loading'
+
+      this.$emit("clickBtn")
+    }
   },
   watch: {
     loader() {
