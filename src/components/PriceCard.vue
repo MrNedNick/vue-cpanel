@@ -13,9 +13,9 @@
         <div class="title-wrapper">
           <span class="title mr-3">{{ title }}</span>
           <span class="old-price">{{ oldPrice }}</span>
-          
+          <div class="line"></div>
         </div>
-        <div class="line"></div>
+        
         <div class="d-flex align-center">
           <span class="price">{{ price }}</span>
           <span class="price-period ml-2">/Month</span>
@@ -66,7 +66,6 @@
 
 <script>
 import PickPlanButton from "./PickPlanButton.vue";
-
 export default {
   name: "PriceCard",
   components: {
@@ -136,10 +135,10 @@ export default {
   background: rgba(51, 183, 104, 0.08);
   border-radius: 2px;
 }
-/* .title-wrapper {
+.title-wrapper {
   display: flex;
   position: relative;
-} */
+}
 .title {
   font-size: 22px;
   line-height: 28px;
@@ -151,15 +150,16 @@ export default {
   color: #05122d;
   opacity: 0.4;
 }
-/* .line {
-    display: absolute;
-    height: 5px;
-    width: 45px;
-    top: 50px;
-    left: 0px;
-    background-color: #E8C300;
+.line {
+    position: absolute;
+    height: 1px;
+    width: 43px;
+    top: 13px;
+    right: -6px;
+    background-color: #05122D;
+    opacity: 0.4;
     transform: rotate(135deg);
-} */
+}
 .price {
   font-weight: bold;
   font-size: 56px;
@@ -200,4 +200,3 @@ export default {
   opacity: 0.6;
 }
 </style>
-

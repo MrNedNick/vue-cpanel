@@ -188,7 +188,6 @@
 <script>
 import PriceCard from "../components/PriceCard.vue";
 import PickPlanButton from "../components/PickPlanButton.vue";
-
 export default {
   components: {
     PriceCard,
@@ -324,7 +323,6 @@ export default {
   background: rgba(51, 183, 104, 0.08);
   border-radius: 2px;
 }
-
 /* cards */
 .card-wrapper {
   width: 1240px;
