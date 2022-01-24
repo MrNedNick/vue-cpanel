@@ -181,9 +181,8 @@
         </v-container>
       </v-container>
     </v-container>
-    <v-snackbar v-model="snackbar">
+    <v-snackbar v-model="snackbar" top>
       {{ snackbarText }}
-
       <template v-slot:action="{ attrs }">
         <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
           Close

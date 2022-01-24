@@ -1,13 +1,12 @@
 <template>
   <v-card class="checkbox-card" elevation="0">
-    <v-card-title class="checkbox-card-title">Keywords</v-card-title>
+    <v-card-title class="checkbox-card-title">{{ title }}</v-card-title>
     <div class="checkbox">
       <div class="check-wrapper">
         <v-icon class="check">mdi-check</v-icon>
       </div>
       <v-card-text class="check-text"
-        >Analyze the terms that are important to you & your
-        competition.</v-card-text
+        >{{ text1 }}</v-card-text
       >
     </div>
 
@@ -16,7 +15,16 @@
         <v-icon class="check">mdi-check</v-icon>
       </div>
       <v-card-text class="check-text"
-        >Identify opportunity keywords.</v-card-text
+        >{{ text2 }}</v-card-text
+      >
+    </div>
+
+    <div class="checkbox">
+      <div class="check-wrapper">
+        <v-icon class="check">mdi-check</v-icon>
+      </div>
+      <v-card-text class="check-text"
+        >{{ text3 }}</v-card-text
       >
     </div>
     <pick-plan-button />
