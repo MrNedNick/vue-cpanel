@@ -273,24 +273,7 @@ export default {
   },
   methods: {
     clickBtn: function () {
-      new Promise(function mockRequest(resolve, reject) {
-        setTimeout(() => {
-          // 80% probability of getting true
-          resolve();
-          if (Math.random() < 0.8) {
-            resolve("done");
-          } else {
-            reject("error");
-          }
-        }, 2000)
-        .then(function (result) {
-          alert(result);
-        })
-        .catch(function (err) {
-          alert(err)
-          // setTimeout(() => (this.snackbar = true), 2000);
-        });
-      });
+      setTimeout(() => (this.snackbar = true), 2000);
     },
   },
 };
