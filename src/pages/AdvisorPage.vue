@@ -4,20 +4,16 @@
     <input
       type="text"
       class="todo-input"
-      placeholder="Add task"
+      placeholder="Add new task"
       v-model="newTodo"
       @keyup.enter="addTodo"
     />
     <v-btn
-      class="todo-button mx-2"
-      fab
-      dark
-      color="indigo"
+      class="todo-button ml-5 text-capitalize"
+      outlined
       @click="addTodo"
     >
-      <v-icon dark>
-        mdi-plus
-      </v-icon>
+      <v-icon> mdi-plus </v-icon>
     </v-btn>
     <transition-group name="fade">
       <task-item
@@ -31,7 +27,7 @@
       />
     </transition-group>
 
-    <div class="footer">
+    <!-- <div class="footer">
       <div>
         <label>
           <input
@@ -44,7 +40,7 @@
       </div>
 
       <div>{{ remaining }} tasks left</div>
-    </div>
+    </div> -->
     <!-- <v-app id="inspire">
       <v-row justify="center">
         <v-dialog v-model="dialog" persistent max-width="290">
@@ -95,13 +91,13 @@ export default {
       todos: [
         {
           id: 1,
-          title: "Clean my room",
+          title: "Prüfe deine Textoptimierungs-Analysen",
           completed: false,
           editing: false,
         },
         {
           id: 2,
-          title: "Read new book",
+          title: "Prüfe deine Textoptimierungs",
           completed: false,
           editing: false,
         },
@@ -150,49 +146,53 @@ export default {
 };
 </script>
 
-<style >
+<style lang='scss'>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
 
 .advisor-wrapper {
   margin-top: 100px;
 }
 .advisor-title {
-    font-family: Source Sans Pro;
-    font-size: 28px;
-    line-height: 35px;
-    color: #05122D;
+  font-family: Source Sans Pro;
+  font-size: 28px;
+  line-height: 35px;
+  color: #05122d;
 }
-
 .todo-input {
-  width: 80%;
+  width: 448px;
+  height: 40px;
   padding: 10px 18px;
   font-size: 18px;
   margin-bottom: 16px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgba(26, 44, 89, 0.08);
+  background: rgba(26, 44, 89, 0.04);
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  line-height: 166%;
+  color: #05122d;
 }
-
 .todo-button {
-  border: 1px solid rgba(202, 191, 191, 0.5);
-  width: 20%;
-  height: 46px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  color: #000000;
-  border-radius: 5px;
-  transition: all 0.2s linear;
-  background-color: #eeeeee;
-  border-color: #eeeeee;
+  width: 40px;
+  border-radius: 6px;
+  border: 1px solid #3366ff;
+  background-color: #3366ff;
+  & .v-btn__content {
+    color: white;
+    font-size: 16px;
+  }
 }
-
-.todo-button:hover {
-  background-color: #e8c300;
-  border-color: #e8c300;
+.v-btn:not(.v-btn--round).v-size--default {
+    height: 40px;
+    min-width: 40px;
 }
-
-.todo-button:active {
-  background-color: #ff7300;
-  border-color: #ff7300;
+.todo-button .theme--light.v-btn:hover::before {
+  opacity: 1;
+}
+.todo-button .theme--light.v-btn:hover .v-btn__content {
+  color: white;
+}
+.v-btn:before {
+  background-color: #3366ff;
 }
 
 .clear-button {

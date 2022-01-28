@@ -1,7 +1,7 @@
 <template>
   <div class="todo-item">
     <div class="todo-item-left">
-      <input type="checkbox" v-model="completed" @change="doneEdit" />
+      <!-- <input type="checkbox" v-model="completed" @change="doneEdit" /> -->
       <div
         v-if="!editing"
         @dblclick="editTodo"
@@ -22,7 +22,9 @@
       />
     </div>
     <div class="remove-item" @click="removeTodo(index)">&times;</div>
+    <v-divider></v-divider>
   </div>
+  
 </template>
 
 <script>
