@@ -1,100 +1,36 @@
 <template>
-  
-    <v-container class="advisor-wrapper">
-      <h1 class="advisor-title">Advisor</h1>
-      <input
-        type="text"
-        class="todo-input"
-        placeholder="Add new task"
-        v-model="newTodo"
-        @keyup.enter="addTodo"
-      />
-      <v-btn class="todo-button ml-5 text-capitalize" outlined @click="addTodo">
-        <v-icon> mdi-plus </v-icon>
-      </v-btn>
-            
-      <v-data-table
-        :headers="headers"
-        :items="tasks"
-        :items-per-page="5"
-        class="elevation-1"
-      >
-        
-      </v-data-table>
+  <v-container class="advisor-wrapper">
+    <h1 class="advisor-title">Advisor</h1>
+    <input
+      type="text"
+      class="todo-input"
+      placeholder="Add new task"
+      v-model="newTodo"
+      @keyup.enter="addTodo"
+    />
 
-      <v-container class="tasks-wrapper">
+    <v-btn class="todo-button ml-5 text-capitalize" outlined @click="addTodo">
+      <v-icon> mdi-plus </v-icon>
+    </v-btn>
 
-        <transition-group name="fade">
-          <task-item
-            v-for="(todo, index) in todos"
-            :key="todo.id"
-            :todo="todo"
-            :index="index"
-            :checkAll="!anyRemaining"
-            @removedTodo="removeTodo"
-            @finishedEdit="finishedEdit"
-          />
-        </transition-group>
-      </v-container>
-
-      <!-- <div class="footer">
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            :checked="!anyRemaining"
-            @change="checkAllTodos"
-          />
-          Check All</label
-        >
-      </div>
-
-      <div>{{ remaining }} tasks left</div>
-    </div> -->
-      <!-- <v-app id="inspire">
-      <v-row justify="center">
-        <v-dialog v-model="dialog" persistent max-width="290">
-          <template v-slot:activator="{ on, attrs }">
-            <transition name="fade">
-              <button
-                v-if="showClearCompleatedButton"
-                class="todo-button clear-button"
-                v-bind="attrs"
-                v-on="on"
-              >
-                Clear Completed
-              </button>
-            </transition>
-          </template>
-          <v-card>
-            <v-card-title class="text-h5"> Are you sure? </v-card-title>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="green darken-1" text @click="dialog = false">
-                NO
-              </v-btn>
-              <v-btn color="green darken-1" text @click="clearCompleated">
-                YES
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-row>
-    </v-app> -->
-    </v-container>
-
+    <v-data-table
+      :headers="headers"
+      :items="tasks"
+      :items-per-page="5"
+      class="elevation-1"
+    >
+    </v-data-table>
+  </v-container>
 </template>
 
 <script>
-import TaskItem from "../components/TaskItem.vue";
-
 export default {
   name: "TodoList",
-  components: {
-    TaskItem,
-  },
   data() {
     return {
+      newTodo: "",
+      idForTodo: 4,
+      beforeEditCache: "",
       headers: [
         {
           text: "Topic",
@@ -109,6 +45,7 @@ export default {
       ],
       tasks: [
         {
+          id: 1,
           name: "Prüfe deine Textoptimierungs-Analysen",
           priority: "Medium",
           state: "Open",
@@ -116,6 +53,7 @@ export default {
           messages: "Jakob Rosser",
         },
         {
+          id: 2,
           name: "H1 Content",
           priority: "Low",
           state: "In progress",
@@ -123,6 +61,7 @@ export default {
           messages: "Jakob Rosser",
         },
         {
+          id: 3,
           name: "H1 Content",
           priority: "High",
           state: "Done",
@@ -130,64 +69,23 @@ export default {
           messages: "Jakob Rosser",
         },
       ],
-
-      newTodo: "",
-      idForTodo: 3,
-      beforeEditCache: "",
-      dialog: false,
-      todos: [
-        {
-          id: 1,
-          title: "Prüfe deine Textoptimierungs-Analysen",
-          completed: false,
-          editing: false,
-        },
-        {
-          id: 2,
-          title: "Prüfe deine Textoptimierungs",
-          completed: false,
-          editing: false,
-        },
-      ],
     };
-  },
-  computed: {
-    remaining() {
-      return this.todos.filter((todo) => !todo.completed).length;
-    },
-    anyRemaining() {
-      return this.remaining != 0;
-    },
-    showClearCompleatedButton() {
-      return this.todos.filter((todo) => todo.completed).length > 0;
-    },
   },
   methods: {
     addTodo() {
       if (this.newTodo.trim().length == 0) return;
 
-      this.todos.push({
+      this.tasks.push({
         id: this.idForTodo,
-        title: this.newTodo,
-        completed: false,
-        editing: false,
+        name: this.newTodo,
+        priority: "High",
+        state: "Done",
+        date: "20 Apr 2021",
+        messages: "Jakob Rosser",
       });
 
       this.newTodo = "";
       this.idForTodo++;
-    },
-    removeTodo(index) {
-      this.todos.splice(index, 1);
-    },
-    checkAllTodos() {
-      this.todos.forEach((todo) => (todo.completed = event.target.checked));
-    },
-    clearCompleated() {
-      this.todos = this.todos.filter((todo) => !todo.completed);
-      this.dialog = false;
-    },
-    finishedEdit(data) {
-      this.todos.splice(data.index, 1, data.todo);
     },
   },
 };
@@ -245,41 +143,5 @@ export default {
 
 .tasks-wrapper {
   background-color: white;
-}
-
-.clear-button {
-  width: 150px;
-  height: 25px;
-  font-size: 12px;
-}
-
-.completed {
-  text-decoration: line-through;
-  color: grey;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 16px;
-  border-top: 1px solid lightgrey;
-  padding-top: 14px;
-  margin-bottom: 14px;
-  height: 30px;
-}
-
-.active {
-  background: lightgrey;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
