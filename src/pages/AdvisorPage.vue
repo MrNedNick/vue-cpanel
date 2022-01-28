@@ -8,25 +8,24 @@
       v-model="newTodo"
       @keyup.enter="addTodo"
     />
-    <v-btn
-      class="todo-button ml-5 text-capitalize"
-      outlined
-      @click="addTodo"
-    >
+    <v-btn class="todo-button ml-5 text-capitalize" outlined @click="addTodo">
       <v-icon> mdi-plus </v-icon>
     </v-btn>
-    <transition-group name="fade">
-      <task-item
-        v-for="(todo, index) in todos"
-        :key="todo.id"
-        :todo="todo"
-        :index="index"
-        :checkAll="!anyRemaining"
-        @removedTodo="removeTodo"
-        @finishedEdit="finishedEdit"
-      />
-    </transition-group>
 
+    <v-container class="tasks-wrapper">
+      <span>Tasks (3)</span>
+      <transition-group name="fade">
+        <task-item
+          v-for="(todo, index) in todos"
+          :key="todo.id"
+          :todo="todo"
+          :index="index"
+          :checkAll="!anyRemaining"
+          @removedTodo="removeTodo"
+          @finishedEdit="finishedEdit"
+        />
+      </transition-group>
+    </v-container>
     <!-- <div class="footer">
       <div>
         <label>
@@ -151,6 +150,7 @@ export default {
 
 .advisor-wrapper {
   margin-top: 100px;
+  width: 1328px;
 }
 .advisor-title {
   font-family: Source Sans Pro;
@@ -182,8 +182,8 @@ export default {
   }
 }
 .v-btn:not(.v-btn--round).v-size--default {
-    height: 40px;
-    min-width: 40px;
+  height: 40px;
+  min-width: 40px;
 }
 .todo-button .theme--light.v-btn:hover::before {
   opacity: 1;
@@ -193,6 +193,10 @@ export default {
 }
 .v-btn:before {
   background-color: #3366ff;
+}
+
+.tasks-wrapper {
+  background-color: white;
 }
 
 .clear-button {
