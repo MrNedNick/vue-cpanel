@@ -1,32 +1,43 @@
 <template>
-  <v-container class="advisor-wrapper">
-    <h1 class="advisor-title">Advisor</h1>
-    <input
-      type="text"
-      class="todo-input"
-      placeholder="Add new task"
-      v-model="newTodo"
-      @keyup.enter="addTodo"
-    />
-    <v-btn class="todo-button ml-5 text-capitalize" outlined @click="addTodo">
-      <v-icon> mdi-plus </v-icon>
-    </v-btn>
+  
+    <v-container class="advisor-wrapper">
+      <h1 class="advisor-title">Advisor</h1>
+      <input
+        type="text"
+        class="todo-input"
+        placeholder="Add new task"
+        v-model="newTodo"
+        @keyup.enter="addTodo"
+      />
+      <v-btn class="todo-button ml-5 text-capitalize" outlined @click="addTodo">
+        <v-icon> mdi-plus </v-icon>
+      </v-btn>
+            
+      <v-data-table
+        :headers="headers"
+        :items="tasks"
+        :items-per-page="5"
+        class="elevation-1"
+      >
+        
+      </v-data-table>
 
-    <v-container class="tasks-wrapper">
-      <span>Tasks (3)</span>
-      <transition-group name="fade">
-        <task-item
-          v-for="(todo, index) in todos"
-          :key="todo.id"
-          :todo="todo"
-          :index="index"
-          :checkAll="!anyRemaining"
-          @removedTodo="removeTodo"
-          @finishedEdit="finishedEdit"
-        />
-      </transition-group>
-    </v-container>
-    <!-- <div class="footer">
+      <v-container class="tasks-wrapper">
+
+        <transition-group name="fade">
+          <task-item
+            v-for="(todo, index) in todos"
+            :key="todo.id"
+            :todo="todo"
+            :index="index"
+            :checkAll="!anyRemaining"
+            @removedTodo="removeTodo"
+            @finishedEdit="finishedEdit"
+          />
+        </transition-group>
+      </v-container>
+
+      <!-- <div class="footer">
       <div>
         <label>
           <input
@@ -40,7 +51,7 @@
 
       <div>{{ remaining }} tasks left</div>
     </div> -->
-    <!-- <v-app id="inspire">
+      <!-- <v-app id="inspire">
       <v-row justify="center">
         <v-dialog v-model="dialog" persistent max-width="290">
           <template v-slot:activator="{ on, attrs }">
@@ -70,7 +81,8 @@
         </v-dialog>
       </v-row>
     </v-app> -->
-  </v-container>
+    </v-container>
+
 </template>
 
 <script>
@@ -83,6 +95,42 @@ export default {
   },
   data() {
     return {
+      headers: [
+        {
+          text: "Topic",
+          align: "start",
+          sortable: false,
+          value: "name",
+        },
+        { text: "Priority", value: "priority" },
+        { text: "State", value: "state" },
+        { text: "Create Date", value: "date" },
+        { text: "Messages", value: "messages" },
+      ],
+      tasks: [
+        {
+          name: "Prüfe deine Textoptimierungs-Analysen",
+          priority: "Medium",
+          state: "Open",
+          date: "20 Apr 2021",
+          messages: "Jakob Rosser",
+        },
+        {
+          name: "H1 Content",
+          priority: "Low",
+          state: "In progress",
+          date: "20 Apr 2021",
+          messages: "Jakob Rosser",
+        },
+        {
+          name: "H1 Content",
+          priority: "High",
+          state: "Done",
+          date: "20 Apr 2021",
+          messages: "Jakob Rosser",
+        },
+      ],
+
       newTodo: "",
       idForTodo: 3,
       beforeEditCache: "",
