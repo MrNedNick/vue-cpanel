@@ -34,6 +34,7 @@ export default {
       newTodo: "",
       idForTodo: 4,
       beforeEditCache: "",
+      curentDate: "",
       headers: [
         {
           text: "Topic",
@@ -52,12 +53,19 @@ export default {
     addTodo() {
       if (this.newTodo.trim().length == 0) return;
 
+      let today = new Date();
+      this.curentDate = new Intl.DateTimeFormat("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      }).format(today);
+
       this.$store.state.tasks.push({
         id: this.idForTodo,
         name: this.newTodo,
         priority: "High",
         state: "Done",
-        date: "20 Apr 2021",
+        date: this.curentDate,
         messages: "Jakob Rosser",
       });
 
@@ -84,11 +92,14 @@ export default {
 .todo-input {
   width: 448px;
   height: 40px;
-  padding: 10px 18px;
+  padding: 10px 40px;
   font-size: 18px;
   margin-bottom: 16px;
   border: 1px solid rgba(26, 44, 89, 0.08);
   background: rgba(26, 44, 89, 0.04);
+  background-image: url("../assets/search.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
   font-family: Source Sans Pro;
   font-size: 16px;
   line-height: 166%;
@@ -152,7 +163,7 @@ export default {
   height: 72px;
 }
 .table tbody tr:hover {
-cursor: pointer;
+  cursor: pointer;
 }
 .table tr th:first-child {
   padding-left: 50px !important;
