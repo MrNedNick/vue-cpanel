@@ -15,7 +15,7 @@
 
     <v-data-table
       :headers="headers"
-      :items="tasks"
+      :items="$store.state.tasks"
       :items-per-page="5"
       class="elevation-1"
     >
@@ -43,39 +43,13 @@ export default {
         { text: "Create Date", value: "date" },
         { text: "Messages", value: "messages" },
       ],
-      tasks: [
-        {
-          id: 1,
-          name: "Prüfe deine Textoptimierungs-Analysen",
-          priority: "Medium",
-          state: "Open",
-          date: "20 Apr 2021",
-          messages: "Jakob Rosser",
-        },
-        {
-          id: 2,
-          name: "H1 Content",
-          priority: "Low",
-          state: "In progress",
-          date: "20 Apr 2021",
-          messages: "Jakob Rosser",
-        },
-        {
-          id: 3,
-          name: "H1 Content",
-          priority: "High",
-          state: "Done",
-          date: "20 Apr 2021",
-          messages: "Jakob Rosser",
-        },
-      ],
     };
   },
   methods: {
     addTodo() {
       if (this.newTodo.trim().length == 0) return;
 
-      this.tasks.push({
+      this.$store.state.tasks.push({
         id: this.idForTodo,
         name: this.newTodo,
         priority: "High",
@@ -92,8 +66,6 @@ export default {
 </script>
 
 <style lang='scss'>
-@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
-
 .advisor-wrapper {
   margin-top: 100px;
   width: 1328px;
