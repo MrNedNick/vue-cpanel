@@ -18,7 +18,7 @@
       <v-data-table
         :headers="headers"
         :items="$store.state.tasks"
-        :items-per-page="5"
+        :items-per-page="10"
         class="table elevation-0"
       >
       </v-data-table>
@@ -150,6 +150,9 @@ export default {
 }
 .table tbody tr {
   height: 72px;
+}
+.table tbody tr:hover {
+cursor: pointer;
 }
 .table tr th:first-child {
   padding-left: 50px !important;
